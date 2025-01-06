@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </head>
 
 <body class="bg-white dark:bg-gray-900">
     <header>
-        <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <nav class="bg-white dark:bg-gray-900 fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+
+                    <img src="{{ asset('images/logo-rsia-2.png') }}" class="hidden dark:inline h-10" alt="Flowbite Logo">
+                    <img src="{{ asset('images/logo-rsia-aisyiyah.png') }}" class="dark:hidden h-10" alt="Flowbite Logo">
+                    {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> --}}
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
@@ -42,18 +46,18 @@
 
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 gap-20">
                         <li>
-                            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Beranda</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Layanan</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Artikel</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Karir</a>
                         </li>
                     </ul>
                 </div>
@@ -62,11 +66,58 @@
 
     </header>
     <main class="mt-20">
+
+        <div id="default-carousel" class="relative w-full -z-50 -mt-2" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-64 overflow-hidden md:h-96">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{ asset('images/irwan-rbDE93-0hHs-unsplash.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{ asset('images/adhy-savala-zbpgmGe27p8-unsplash.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{ asset('images/marcel-scholte-LPurJnihmQI-unsplash.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
         <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 content-center">
                 <div class="mx-auto max-w-screen-sm">
-                    <h1 class="mb-4 font-extrabold text-base/loose tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Selamat Datatang di <span class="text-blue-600">RSIA Aisyiyah Pekajangan</span></h1>
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda vel itaque delectus quos cum! At, nulla inventore exercitationem eaque nostrum eius autem sit ratione molestias praesentium aliquam dolores totam laudantium.</h1>
+                    <p class="mb-4 leading-10 font-extrabold tracking-tight text-gray-900 text-4xl lg:text-6xl dark:text-white">Selamat Datang di <span class="text-blue-600 dark:text-blue-500">RSIA Aisyiyah Pekajangan</span></p>
+                    <p class="leading-loose transition-all font-medium text-gray-500 dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda vel itaque delectus quos cum! At, nulla inventore exercitationem eaque nostrum eius autem sit ratione molestias praesentium aliquam dolores totam laudantium.</p>
                 </div>
             </div>
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -76,7 +127,7 @@
             </div>
         </div>
 
-        <div class="bg-gray-100 dark:bg-gray-800 lg:w-1/2 w-full mx-auto p-4 lg:rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 shadow-lg">
+        <div class="bg-gray-100 dark:bg-gray-800 lg:w-1/2 mx-auto p-4 lg:rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 shadow-lg">
             <h1 class="text-2xl font-bold text-center text-gray-900 dark:text-white">Cari Jadwal Poliklinik</h1>
             <form class="mx-auto mt-5 grid grid-cols-1 lg:grid-cols-3 gap-4 pb-4">
                 <div class="input-group">
@@ -98,19 +149,22 @@
                     </select>
                 </div>
                 <div class="input-group">
+                    <label for="date-picker-label" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal</label>
+
                     <div class="relative max-w-sm">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </div>
-                        <input id="datepicker-actions" datepicker datepicker-buttons datepicker-autoselect-today type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                        <input datepicker id="default-datepicker" type="text" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
                     </div>
+
                 </div>
 
             </form>
         </div>
-        <div class="container mx-auto py-10">
+        <div class="container mx-auto py-10 w-full px-12">
             <div class="relative shadow-md sm:rounded-lg overflow-x-auto">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -223,11 +277,11 @@
             </div>
         </div>
 
-        <div class="container grid grid-cols-1 gap-8 md:grid-cols-3 mx-auto w-full  py-6 px-6">
-            <div class="box">
-                <h1 class="text-5xl font-bold text-blue-600 dark:text-white">Berita & Artikel</h1>
-                <p class="leading-loose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laborum vitae cum quisquam totam, vel ipsa fugiat deserunt aliquid, illum explicabo reprehenderit deleniti. Quis tempora aperiam, sequi a molestiae amet.</p>
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Lihat Semua Artikel <i class="ri-arrow-right-line"></i></a>
+        <div class="container grid grid-cols-1 gap-8 lg:grid-cols-3 mx-auto w-full py-6 px-10 md:px-8">
+            <div class="box px-4 content-center item-justify-center">
+                <h1 class="text-5xl font-extrabold text-blue-600 dark:text-blue-500 mb-4">Berita & Artikel</h1>
+                <p class="leading-loose text-dark dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laborum vitae cum quisquam totam, vel ipsa fugiat deserunt aliquid, illum explicabo reprehenderit deleniti. Quis tempora aperiam, sequi a molestiae amet.</p>
+                <a href="#" class="font-medium text-sm text-blue-600 dark:text-blue-500 hover:underline">Lihat Semua Artikel <i class="ri-arrow-right-line"></i></a>
                 <div class="badge flex flex-wrap mt-2 gap-y-2 overflow-x-auto">
                     <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">Badge link</a>
                     <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">Badge link</a>
@@ -241,8 +295,8 @@
                     <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">Badge link</a>
                 </div>
             </div>
-            <div class="box col-span-2 flex gap-6 overflow-x-auto">
-                <div class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="box col-span-2 flex gap-6 overflow-x-auto px-4">
+                <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="" />
                     </a>
@@ -250,7 +304,7 @@
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
                         </a>
-                        <p class="lg:inline hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class="md:block hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Read more
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -259,7 +313,7 @@
                         </a>
                     </div>
                 </div>
-                <div class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="" />
                     </a>
@@ -267,7 +321,7 @@
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
                         </a>
-                        <p class="lg:inline hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class="md:block hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Read more
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -276,7 +330,7 @@
                         </a>
                     </div>
                 </div>
-                <div class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg" src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="" />
                     </a>
@@ -284,7 +338,7 @@
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
                         </a>
-                        <p class="lg:inline hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        <p class="md:block hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                         <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Read more
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -293,13 +347,69 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <div class="container mx-auto w-full p-6">
+            <h1 class="md:text-2xl text-5xl font-extrabold text-center text-blue-600 dark:text-blue-500">Layanan</h1>
+            <div class="box gap-0 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center items-center py-6 px-10 md:px-8">
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-file-list-3-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-hotel-bed-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-nurse-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-stethoscope-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-heart-2-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-flask-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-first-aid-kit-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
+                <a href="#" class="block max-w-sm w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="ri-microscope-line text-5xl mb-2 text-center text-blue-600"></h5>
+
+                    <h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </a>
 
             </div>
         </div>
-        <div class="container mx-auto w-full p-6">
-            <h1 class="text-5xl font-bold text-center text-blue-600 dark:text-white">Layanan</h1>
+
+        <div class="mx-auto w-full">
+            <h1 class="md:text-2xl text-5xl font-extrabold text-center text-blue-600 dark:text-blue-500 my-10">Lokasi Kami</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50782.75122370396!2d109.63267365631181!3d-6.940885519766223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7021431da6a5c7%3A0xa27e71c67601f470!2sRSIA%20Aisyiyah%20Pekajangan!5e0!3m2!1sid!2sid!4v1736173371324!5m2!1sid!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
     </main>
     <footer class="bg-white dark:bg-gray-900 bottom-0 mt-30">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -393,6 +503,7 @@
         </div>
     </footer>
 
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -441,6 +552,14 @@
             }
 
         });
+
+        document.addEventListener('scroll', (evt) => {
+            // if (window.scrollY > 0) {
+            //     document.getElementById('navbar').classList.add('sticky');
+            // } else {
+            //     document.getElementById('navbar').classList.remove('sticky');
+            // }
+        })
     </script>
 </body>
 
