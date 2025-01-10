@@ -8,3 +8,4 @@ Route::get('/', function () {
 Route::get('/artikel', function () {
     return view('pages.artikel');
 });
+

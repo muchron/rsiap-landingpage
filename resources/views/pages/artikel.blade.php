@@ -1,9 +1,9 @@
 @extends('app')
 
 @section('content')
-    <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full lg:p-0 px-10 md:mt-24 mt-16">
+    <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
         <div class="box mt-2">
-            <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <div id="indicators-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
@@ -159,8 +159,227 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto md:p-0 px-6 w-full">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-extrabold text-green-600 dark:text-green-400">Semua Artikel</h1>
+            <div class="flex gap-2">
+                <span class="cursor-pointer bg-green-100 hover:bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</span>
+                <span class="cursor-pointer bg-green-100 hover:bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</span>
+                <span class="cursor-pointer bg-green-100 hover:bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</span>
+                <span class="cursor-pointer bg-green-100 hover:bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</span>
+                <span class="text-medium font-medium text-green-600 dark:text-green-400 hover:text-green-900"><i class="ri-filter-line"></i></span>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 justify-center py-6">
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/irwan-rbDE93-0hHs-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/nguy-n-hi-p-2rNHliX6XHk-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/levi-meir-clancy-bxyV1SfGMFU-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/stephen-andrews-GwgFPDXiSIs-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/marcel-scholte-LPurJnihmQI-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div class="card-image">
+                    <a href="#">
+                        <img src="{{ asset('images/adhy-savala-zbpgmGe27p8-unsplash.jpg') }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">
+                    </a>
+                </div>
+                <div class="card-content p-6">
+                    <div class="card-title">
+                        <p class="text-2xl font-bold text-green-600 dark:text-green-400 mb-2 hover:text-green-900">
+                            <a href="#">Nulla elit magna incididunt aliqua irure eu.</a>
+                        </p>
+                        <p class="text-xs text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> 08 Januari 2025 <i class="ri-user-line"></i> Author</p>
+                    </div>
+                    <div class="card-body mt-3">
+                        <p class="text-sm text-gray-500 dark:text-white text-justify mb-3">
+                            Nisi aute dolore eu ad cupidatat esse dolore minim ad anim qui excepteur. Sit voluptate aute velit nulla commodo. Ipsum reprehenderit et in tempor enim in amet ut do. Occaecat sunt ut sunt anim laboris ad incididunt. Amet voluptate tempor nulla aute. Irure mollit ad eiusmod ullamco irure.
+                        </p>
+                        <a href="#" class="text-sm font-medium text-white dark:text-gray-100 px-3 py-2 bg-green-700 hover:bg-green-900 rounded-lg ">Lanjutkan Membaca <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
+    </div>
+
+    <div class="container mx-auto flex justify-center w-full p-6 items-center">
+        <nav aria-label="Page navigation example">
+            <ul class="inline-flex -space-x-px text-sm">
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                </li>
+                <li>
+                    <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 @endsection
 
