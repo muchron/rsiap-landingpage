@@ -7,7 +7,7 @@
     </div>
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="mx-auto max-w-screen-sm">
-            <img class="mx-auto mb-6 lg:mb-8 h-[400px]" src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="Flowbite Logo">
+            <img class="mx-auto mb-6 lg:mb-8 md:h-[400px]" src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" alt="Flowbite Logo">
         </div>
     </div>
 </div>

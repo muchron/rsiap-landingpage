@@ -2,19 +2,19 @@
     <!-- Carousel wrapper -->
     <div class="relative h-60 overflow-hidden lg:h-[640px]">
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" class="absolute object-contain block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="{{ asset('images/boitumelo-6SZYEy4b5d0-unsplash.jpg') }}" class="absolute object-cover h-[100%] block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{{ asset('images/irwan-rbDE93-0hHs-unsplash.jpg') }}" class="absolute object-contain block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="{{ asset('images/irwan-rbDE93-0hHs-unsplash.jpg') }}" class="absolute object-cover h-[100%] block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{{ asset('images/adhy-savala-zbpgmGe27p8-unsplash.jpg') }}" class="absolute object-contain block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="{{ asset('images/adhy-savala-zbpgmGe27p8-unsplash.jpg') }}" class="absolute object-cover h-[100%] block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{{ asset('images/marcel-scholte-LPurJnihmQI-unsplash.jpg') }}" class="absolute object-contain block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="{{ asset('images/marcel-scholte-LPurJnihmQI-unsplash.jpg') }}" class="absolute object-cover h-[100%] block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" class="absolute object-contain block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" class="absolute object-cover h-[100%] block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
     <!-- Slider indicators -->

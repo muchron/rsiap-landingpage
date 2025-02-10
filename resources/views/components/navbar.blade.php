@@ -1,6 +1,6 @@
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" class="flex items-start space-x-3 rtl:space-x-reverse">
+        <a href="/" class="flex items-start space-x-3 rtl:space-x-reverse">
 
             <img src="{{ asset('images/logo-rsia-2.png') }}" class="hidden dark:inline h-10" alt="Flowbite Logo">
             <img src="{{ asset('images/logo-rsia-aisyiyah.png') }}" class="dark:hidden h-10" alt="Flowbite Logo">
@@ -53,13 +53,9 @@
 
 
             links.forEach(link => {
-                console.log(link.classList, currentURL);
-                console.log(link.href, link.href === currentURL);
-
                 if (link.href === currentURL) {
                     link.classList.remove('text-gray-900', 'hover:bg-gray-100', 'md:hover:bg-transparent', 'md:hover:text-green-700', 'dark:hover:bg-gray-700', 'dark:hover:text-white', 'md:dark:hover:bg-transparent', 'dark:border-gray-700', 'dark:text-white', 'md:dark:text-white');
                     link.classList.add('text-white', 'bg-green-700', 'md:bg-transparent', 'md:dark:text-green-500', 'md:text-green-700', 'dark:text-green-500', 'dark:bg-green-700', 'md:dark:bg-transparent', 'rounded-2xl');
-                    console.log(link);
                 }
             })
 

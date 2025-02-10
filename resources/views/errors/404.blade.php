@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div class="container mx-auto w-full justify-center items-center mt-60">
+    <div class="container mx-auto w-full justify-center items-center mt-28">
         <div class="text-center">
             <h1 class="text-7xl font-extrabold text-gray-800 dark:text-white">404</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 mt-4">
