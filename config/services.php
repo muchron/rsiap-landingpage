@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'api' => [
+        'base_url' => env('API_URL'),
+        'key' => env('API_KEY'),
+    ]
+
 ];
