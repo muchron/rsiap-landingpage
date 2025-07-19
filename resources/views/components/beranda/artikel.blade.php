@@ -21,7 +21,7 @@
         @foreach ($articles as $article)
             <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
                 <a href="#">
-                    <img class="rounded-t-lg object-fill hover:opacity-90 transition-opacity duration-300 w-30 h-48" src="{{ config('services.api.image') . $article['cover'] }}" alt="" />
+                    <img class="rounded-t-lg object-cover hover:opacity-90 transition-opacity duration-300 w-30 h-48" src="{{ $article['cover'] }}" alt="" />
                 </a>
                 <div class="p-5">
                     <a href="#">
