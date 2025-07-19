@@ -13,7 +13,8 @@
     </div>
 
     <div id="artikel" class="bg-green-100 dark:bg-gray-800">
-        @include('components.beranda.artikel')
+        {{-- @include('components.beranda.artikel') --}}
+        <x-beranda.artikel />
     </div>
 
     <div id="layanan">

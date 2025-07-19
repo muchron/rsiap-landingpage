@@ -11,11 +11,12 @@ Route::get('/artikel', function () {
     return view('pages.artikel');
 });
 
-Route::get('/test', function () {
+Route::get('/test', function (ApiService $api) {
     // return 'sdsdsdsd';
 
-    $url = 'http://127.0.0.1:8000/api/app/articles';
-    $response = Http::get($url);
+    // $url = 'http://127.0.0.1:8000/api/app/articles';
+    // $response = Http::get($url);
+    return $response = $api->get('articles');
     try {
         return $response->body();
     } catch (\Throwable $th) {
