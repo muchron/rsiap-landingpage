@@ -26,7 +26,6 @@ Memberikan layanan informasi berbasis web yang:
 | 🔸 **Berita & Promosi** | Menampilkan update berita, promosi, dan pengumuman penting dari RSIA Aisyiyah. |
 | 🔸 **Informasi Layanan** | Penjelasan ringkas mengenai layanan rawat jalan, rawat inap, penunjang medis, dll. |
 | 🔸 **Jadwal Poliklinik Spesialis** | Informasi lengkap tentang jam operasional dan pembagian jadwal poli.      |
-|--------------------|---------------------------------------------------------------------------|
 
 ---
 
@@ -35,6 +34,7 @@ Memberikan layanan informasi berbasis web yang:
 - **Laravel 11** sebagai kerangka kerja frontend
 - **Blade Template Engine** untuk pembuatan tampilan
 - **TailwindCSS** (opsional) untuk styling modern
+- **Flowbite"** Master template component (https://flowbite.com/)
 - **Axios / HTTP Client Laravel** untuk mengambil data dari API internal rumah sakit
 - **API Provider** internal RSIA sebagai sumber data dinamis
 
