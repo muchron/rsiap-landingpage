@@ -37,6 +37,7 @@ return [
 
     'api' => [
         'base_url' => env('API_URL'),
+        'cons_id' => env('API_CONS_ID'),
         'key' => env('API_KEY'),
         'image' => env('API_IMAGE_URL'),
     ]

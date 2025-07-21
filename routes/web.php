@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.beranda');
 });
-Route::get('/artikel', function () {
-    return view('pages.artikel');
-});
+Route::get('/artikel', [App\Http\Controllers\Pages\Artikel::class, 'index'])->name('artikel');
 
 Route::get('/test', function (ApiService $api) {
     // return 'sdsdsdsd';
@@ -26,6 +24,6 @@ Route::get('/test', function (ApiService $api) {
 });
 
 Route::get('/test/{id}', function (ApiService $api, string $id) {
-    return $api->get('articles/' . $id);
+    return $api->get('articles/'.$id);
 });
 
