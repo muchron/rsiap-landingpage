@@ -8,22 +8,5 @@ Route::get('/', function () {
     return view('pages.beranda');
 });
 Route::get('/artikel', [App\Http\Controllers\Pages\Artikel::class, 'index'])->name('artikel');
-
-Route::get('/test', function (ApiService $api) {
-    // return 'sdsdsdsd';
-
-    // $url = 'http://127.0.0.1:8000/api/app/articles';
-    // $response = Http::get($url);
-    return $response = $api->get('articles');
-    try {
-        return $response->body();
-    } catch (\Throwable $th) {
-        abort(500);
-    }
-
-});
-
-Route::get('/test/{id}', function (ApiService $api, string $id) {
-    return $api->get('articles/'.$id);
-});
+Route::get('/artikel/{slug}', [App\Http\Controllers\Pages\Artikel::class, 'get'])->name('artikel.read');
 

@@ -13,11 +13,18 @@ class Artikel extends Controller
     {
         $this->api = $api;
     }
-    public function index(int $pages)
+    public function index(int $pages = null)
     {
         return view('pages.artikel', [
-            'artikels' => json_decode($this->api->get('articles', ['page' => $pages])->body(), true)
+            'artikels' => json_decode($this->api->get('articles', ['page' => 2])->body(), true)
 
+        ]);
+    }
+    public function get(string $slug)
+    {
+        $arikel = json_decode($this->api->get("articles/$slug")->body(), true);
+        return view('components.pages.read-artikel', [
+            'artikel' => $arikel['data']
         ]);
     }
 }
