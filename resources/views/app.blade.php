@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- create favicon --}}
+    <link rel="icon" href="{{ asset('icon/favicon.png') }}" type="image/x-icon">
     <title>{{ $title ?? 'RSIA Aisyiyah Pekajangan' }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

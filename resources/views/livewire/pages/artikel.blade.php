@@ -1,7 +1,7 @@
    <div>
        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 justify-center py-6">
            @foreach ($artikels['data'] as $artikel)
-               <div class="shadow-md rounded-xl outline outline-1 outline-gray-300 dark:outline-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+               <div class="shadow-md rounded-xl border  border-gray-300 dark:border-gray-600 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
                    <div class="card-image">
                        <a href="#">
                            <img src="{{ $artikel['cover'] }}" alt="" class="w-full h-[200px] rounded-t-xl object-cover">

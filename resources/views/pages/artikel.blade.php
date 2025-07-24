@@ -12,7 +12,7 @@
                     </a>
                 </div>
                 <div class="dark:bg-gray-800 bg-green-200 p-7 rounded-xl">
-                    <ul role="list" class="divide-y divide-green-400 dark:divide-gray-700">
+                    <ul role="list" class="divide-blue-200dark:divide-gray-700">
                         <li class="py-2 sm:py-2">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
