@@ -9,8 +9,10 @@
     </div>
 
     <div id="poliklinik" class="mt-10">
-        @include('components.beranda.poliklinik')
+        <livewire:beranda.filter-poliklinik />
     </div>
+
+
 
     <div id="artikel" class="bg-green-100 dark:bg-gray-800">
         {{-- @include('components.beranda.artikel') --}}
@@ -18,8 +20,7 @@
     </div>
 
     <div id="layanan">
-        @include('components.beranda.layanan')
-
+        <x-beranda.layanan />
     </div>
 
     <div class="mx-auto w-full">

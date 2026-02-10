@@ -3,85 +3,75 @@
 namespace App\Livewire\Beranda;
 
 use App\Services\ApiService;
+use Carbon\Carbon;
 use Livewire\Component;
-use Illuminate\Support\Collection;
 
 class FilterPoliklinik extends Component
 {
-    public $doctor = ['data' => []];
+    public $doctorData = [];
     public $poliklinik = ['data' => []];
-    public $selectedPolyclinic = null;
     public $selectedDoctor = null;
-    public $selectedPolyclinicSlug = null;
     public $schedulesList = [];
+    public $currentDay = '';
 
     public function mount(ApiService $api)
     {
+        // Set hari ini untuk label di UI nanti
+        $this->currentDay = strtoupper(now()->locale('id')->dayName);
+
         $this->fetchDoctor($api);
         $this->fetchPoliklinik($api);
+        $this->fetchSchedule($api);
     }
 
     protected function fetchDoctor(ApiService $api)
     {
         $response = $api->get("doctors");
-        $result = $response->successful()
-            ? $response->json()
-            : ['data' => []];
+        $result = $response->successful() ? $response->json() : ['data' => []];
 
-        $this->doctor = collect($result['data'])->filter(function ($doctor) {
-            return $doctor['schedule'];
+        $this->doctorData = collect($result['data'])->filter(function ($doctor) {
+            return !empty($doctor['schedule']);
         })->toArray();
-
     }
 
     protected function fetchPoliklinik(ApiService $api)
     {
         $response = $api->get("polyclinics");
-        $this->poliklinik = $response->successful()
-            ? $response->json()
-            : ['data' => []];
-
+        $this->poliklinik = $response->successful() ? $response->json() : ['data' => []];
     }
 
-    public function changePolyclinic()
+    public function changeDoctor()
     {
-        $collect = collect($this->poliklinik['data']);
-        $selected = $collect->firstWhere('slug', $this->selectedPolyclinicSlug);
-
-        if ($selected) {
-            $this->selectedPolyclinic = $selected;
-            $this->schedulesList = $selected['schedules'] ?? [];
-        } else {
-            $this->selectedPolyclinic = null;
-            $this->schedulesList = [];
-        }
-    }
-
-    function changeDoctor()
-    {
-        $resource = collect($this->doctor)->firstWhere('slug', $this->selectedDoctor) ?? [];
-
-        if (!$resource) {
-            $this->schedulesList = [];
+        if (!$this->selectedDoctor) {
+            // Jika pilihan dokter dihapus, tampilkan lagi jadwal semua dokter hari ini
+            $this->fetchSchedule(new ApiService());
             return;
         }
 
-        $doctor = collect($resource['schedule'])
-            ->map(function ($schedule) {
-                return $schedule;
-            })
-            ->groupBy('slug', false)
-            ->toArray();
+        $resource = collect($this->doctorData)->firstWhere('slug', $this->selectedDoctor);
 
-        $this->schedulesList = $doctor;
+        // Pastikan kita mengambil key 'schedule' dari data dokter
+        $this->schedulesList = $resource['schedule'] ?? [];
+    }
+
+    public function fetchSchedule(ApiService $api)
+    {
+        $today = strtoupper(now()->locale('id')->dayName);
+        $response = $api->get("schedules/day/{$today}");
+
+        if ($response->successful()) {
+            $result = $response->json();
+            $this->schedulesList = $result['data'] ?? [];
+        } else {
+            $this->schedulesList = [];
+        }
     }
 
     public function render()
     {
         return view('livewire.beranda.filter-poliklinik', [
-            'doctors' => $this->doctor ?? [],
+            'doctors' => $this->doctorData,
             'polyclinics' => $this->poliklinik['data'] ?? [],
-            'schedule' => $this->schedulesList,
         ]);
     }
 }

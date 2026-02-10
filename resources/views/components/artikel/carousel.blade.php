@@ -1,13 +1,26 @@
-<div class="box mt-2">
+<div class="box mt-2 mb-10">
     <div id="indicators-carousel" class="relative w-full" data-carousel="slide">
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96 shadow-2xl">
             @foreach ($articles as $article)
-                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                    <img src="{{ $article['cover'] }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 content-stretch" alt="...">
-                    <div class="hidden absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:flex items-end">
-                        <div class="text-center text-white pb-12 w-full">
-                            <a href="{{ route('artikel.read', $article['slug']) }}" class="text-base md:text-xl font-bold mx-2">{{ $article['title'] }}</a>
-                            <p class="text-sm md:text-base">{{ Str::limit(strip_tags($article['body']), 60) }}</p>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="{{ $loop->first ? 'active' : '' }}">
+                    {{-- Gambar dengan filter brightness agar teks lebih menonjol --}}
+                    <img src="{{ $article['cover'] }}" class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 brightness-90" alt="{{ $article['title'] }}">
+
+                    {{-- Overlay Shadow pada Gambar (Gradient) --}}
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
+                        <div class="text-center text-white pb-12 w-full px-4">
+                            {{-- Judul dengan Shadow Tebal --}}
+                            <a href="{{ route('artikel.read', $article['slug']) }}"
+                                class="block text-xl md:text-3xl font-bold mb-2 transition-transform hover:scale-105"
+                                style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);">
+                                {{ $article['title'] }}
+                            </a>
+
+                            {{-- Deskripsi dengan Shadow --}}
+                            <p class="text-sm md:text-lg opacity-90 max-w-2xl mx-auto"
+                                style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);">
+                                {{ Str::limit(strip_tags($article['body']), 80) }}
+                            </p>
                         </div>
                     </div>
                 </div>

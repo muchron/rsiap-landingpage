@@ -14,8 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     <script script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     @stack('styles')
-    @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 <body class="bg-white dark:bg-gray-900">
@@ -29,6 +29,8 @@
     <footer class="bg-white dark:bg-gray-900 bottom-0 mt-30">
         @include('components.footer')
     </footer>
+
+
 
     @stack('scripts')
     <script>

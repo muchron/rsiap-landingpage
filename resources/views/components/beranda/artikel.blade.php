@@ -1,40 +1,54 @@
-<div class="container grid grid-cols-1 gap-8 lg:grid-cols-3 mx-auto w-full py-6 px-10 md:px-8">
-    <div class="box px-4 content-center item-justify-center">
-        <h1 class="text-5xl font-extrabold text-green-600 dark:text-green-400 mb-4">Berita & Artikel</h1>
-        <p class="leading-loose text-dark dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laborum vitae cum quisquam totam, vel ipsa fugiat deserunt aliquid, illum explicabo reprehenderit deleniti. Quis tempora aperiam, sequi a molestiae amet.</p>
-        <a href="{{ route('artikel') }}" class="font-medium text-sm text-green-600 dark:text-green-400 hover:underline">Lihat Semua Artikel <i class="ri-arrow-right-line"></i></a>
-        {{-- <div class="badge flex flex-wrap mt-2 gap-y-2 overflow-x-auto">
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-green-400 border border-green-400 inline-flex items-center justify-center">Badge link</a>
-        </div> --}}
-    </div>
-    <div class="box col-span-2 flex gap-6 overflow-x-auto px-4 py-10">
+<section class="py-16 px-6 lg:px-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-        @foreach ($articles as $article)
-            <div class="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 transition-transform duration-200 hover:scale-105 hover:shadow-xl">
-                <a href="#">
-                    <img class="rounded-t-lg object-cover hover:opacity-90 transition-opacity duration-300 w-30 h-48" src="{{ $article['cover'] }}" alt="" />
-                </a>
-                <div class="p-5">
-                    <a href="{{ route('artikel.read', ['slug' => $article['slug']]) }}">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white transition-colors duration-300 hover:text-green-700 dark:hover:text-green-400">{{ $article['title'] }}</h5>
-                    </a>
-                    <div class="md:block hidden mb-3 font-normal text-sm lg:text-base text-gray-700 dark:text-gray-400">{!! Str::limit($article['body'], 100, '...') !!}</div>
-                    <a href="{{ route('artikel.read', ['slug' => $article['slug']]) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 transition-colors duration-300">
-                        Baca Selengkapnya
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
+        <div class="lg:col-span-4">
+            <h2 class="text-4xl font-bold text-[#006d44] mb-4">Berita & Artikel</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis laborum vitae cum quisquam totam, vel ipsa fugiat deserunt aliquid, illum explicabo reprehenderit deleniti. Quis tempora aperiam, sequi a molestiae amet.
+            </p>
+            <a href="#" class="inline-flex items-center font-semibold text-[#006d44] hover:underline">
+                Lihat Semua Artikel
+                <span class="ms-2">→</span>
+            </a>
+        </div>
+
+        <div class="lg:col-span-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                @if ($articles === null || count($articles) == 0)
+                    <p class="col-span-full font-medium text-sm text-gray-600">Artikel belum tersedia</p>
+                @else
+                    @foreach ($articles as $article)
+                        <div class="bg-white rounded-xl shadow-lg flex flex-col h-full overflow-hidden transition-transform duration-300 hover:scale-105">
+
+                            <div class="h-48 overflow-hidden">
+                                <img class="w-full h-full object-cover" src="{{ $article['cover'] }}" alt="{{ $article['title'] }}" />
+                            </div>
+
+                            <div class="p-6 flex flex-col flex-grow">
+                                <a href="{{ route('artikel.read', ['slug' => $article['slug']]) }}">
+                                    <h5 class="mb-3 text-xl font-bold text-gray-900 line-clamp-2 hover:text-[#006d44]">
+                                        {{ $article['title'] }}
+                                    </h5>
+                                </a>
+
+                                <div class="text-gray-600 text-sm mb-6 line-clamp-3">
+                                    {!! Str::limit(strip_tags($article['body']), 100) !!}
+                                </div>
+
+                                <div class="mt-auto">
+                                    <a href="{{ route('artikel.read', ['slug' => $article['slug']]) }}" class="inline-flex items-center justify-between w-full sm:w-auto px-5 py-2.5 text-sm font-bold text-white bg-[#006d44] rounded-lg hover:bg-[#005a38] transition-colors">
+                                        Baca Selengkapnya
+                                        <svg class="w-3.5 h-3.5 ms-2" fill="none" viewBox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
-        @endforeach
+        </div>
+
     </div>
-</div>
+</section>

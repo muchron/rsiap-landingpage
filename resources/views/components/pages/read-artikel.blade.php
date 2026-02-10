@@ -90,7 +90,7 @@
 
         </div>
         <div class="col-span-1">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p>
+            {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p> --}}
         </div>
     </div>
     {{-- <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">

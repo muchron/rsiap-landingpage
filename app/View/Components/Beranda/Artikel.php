@@ -12,9 +12,10 @@ class Artikel extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $api;
+    public function __construct(ApiService $api)
     {
-        //
+        $this->api = $api;
     }
 
     /**
@@ -22,12 +23,14 @@ class Artikel extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.beranda.artikel', ['articles' => $this->artikel(new ApiService())]);
+        // return $this->artikel();
+        return view('components.beranda.artikel', ['articles' => $this->artikel()]);
     }
 
-    public function artikel(ApiService $api)
+    public function artikel()
     {
-        $body = $api->get('articles', ['per_page' => 3])->body();
+        $body = $this->api->get('articles', ['per_page' => 3])->body();
+        // change /storage/cover/ to /storage/app/public/cover/
         $bodyJson = json_decode($body, true);
 
         return $bodyJson['data'];

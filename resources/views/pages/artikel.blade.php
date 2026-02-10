@@ -11,7 +11,7 @@
                         Lihat Semua <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
-                <div class="dark:bg-gray-800 bg-green-200 p-7 rounded-xl">
+                {{-- <div class="dark:bg-gray-800 bg-green-200 p-7 rounded-xl">
                     <ul role="list" class="divide-blue-200dark:divide-gray-700">
                         <li class="py-2 sm:py-2">
                             <div class="flex items-center">
@@ -87,7 +87,7 @@
                         </li>
 
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
