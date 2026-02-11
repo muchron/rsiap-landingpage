@@ -55,7 +55,7 @@
     </style>
 @endpush
 @section('content')
-    <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
+    {{-- <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
         <div>
             <img class="h-auto w-full rounded-lg" src="{{ $artikel['cover'] }}" alt="image {{ $artikel['title'] }}">
         </div>
@@ -68,36 +68,52 @@
             </div>
             <livewire:pages.sub.related-articles :slug="$artikel['category']['slug']" />
         </div>
-    </div>
-    <div class="container grid grid-cols-4 gap-4 mx-auto w-full md:p-0 px-10 md:mt-10 mt-5">
+    </div> --}}
+    <div class="container mx-auto w-full md:p-0 px-10 md:mt-24 mt-16">
         <div class="col-span-3">
             <div id="info_artikel">
-                <x-badge-link size="large" class="mb-2">
-                    {{ Str::upper($artikel['category']['name']) }}
-                </x-badge-link>
                 <h1 class="text-3xl font-extrabold text-green-600 dark:text-green-400">{{ $artikel['title'] }}</h1>
-                <p class="text-sm text-gray-400 dark:text-gray-500"><i class="ri-calendar-line"></i> {{ Carbon\Carbon::parse($artikel['created_at'])->format('d F Y') }}<i class="ri-user-line"></i> {{ $artikel['author'] }}</p>
-                <x-badge>
-                    @foreach ($artikel['labels'] as $label => $value)
-                        <x-badge-link size="small">{{ $value['name'] }}</x-badge-link>
-                    @endforeach
-                </x-badge>
+
             </div>
-            <div class="article-content text-justify">
+            <div class="container mx-auto w-full md:p-0 px-0 md:mt-5 mt-5">
+                <div class="text-sm text-gray-400 dark:text-gray-500 flex justify-between mb-2">
+                    <span>
+                        <i class="ri-calendar-line"></i> {{ Carbon\Carbon::parse($artikel['created_at'])->format('d F Y') }}
+
+                    </span>
+                    <span>
+                        <i class="ri-user-line"></i> {{ $artikel['author'] }}
+                    </span>
+                </div>
+                <img class="w-full h-64 md:h-96 object-cover rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
+            </div>
+            <div class="article-content text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
                 <p class="text-justify">{!! $artikel['body'] !!}</p>
 
             </div>
+            <x-badge>
+                @foreach ($artikel['labels'] as $label => $value)
+                    <x-badge-link size="small">{{ $value['name'] }}</x-badge-link>
+                @endforeach
+            </x-badge>
 
         </div>
-        <div class="col-span-1">
-            {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p> --}}
-        </div>
+        {{-- <div class="col-span-1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p>
+        </div> --}}
     </div>
-    {{-- <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!
+    <div class="container mx-auto w-full md:p-0 px-10 md:mt-10 mt-5">
+        <div class="flex items-center justify-between mb-6">
+            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Artikel Lainnya</h5>
+            <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                Lihat Semua <i class="ri-arrow-right-line"></i>
+            </a>
         </div>
-    </div> --}}
+
+      
+            <livewire:pages.sub.related-articles :slug="$artikel['category']['slug']" />
+   
+    </div>
 @endsection
 @push('scripts')
 @endpush
