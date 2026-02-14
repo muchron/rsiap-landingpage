@@ -40,20 +40,41 @@ class FilterPoliklinik extends Component
         $this->poliklinik = $response->successful() ? $response->json() : ['data' => []];
     }
 
+    // public function changeDoctor()
+    // {
+    //     if (!$this->selectedDoctor) {
+    //         // Jika pilihan dokter dihapus, tampilkan lagi jadwal semua dokter hari ini
+    //         $this->fetchSchedule(new ApiService());
+    //         return;
+    //     }
+
+    //     $resource = collect($this->doctorData)->firstWhere('slug', $this->selectedDoctor);
+
+    //     // Pastikan kita mengambil key 'schedule' dari data dokter
+    //     $this->schedulesList = $resource['schedule'] ?? [];
+    // }
+
     public function changeDoctor()
     {
         if (!$this->selectedDoctor) {
-            // Jika pilihan dokter dihapus, tampilkan lagi jadwal semua dokter hari ini
-            $this->fetchSchedule(new ApiService());
+            $this->fetchSchedule(app(ApiService::class));
             return;
         }
 
         $resource = collect($this->doctorData)->firstWhere('slug', $this->selectedDoctor);
 
-        // Pastikan kita mengambil key 'schedule' dari data dokter
-        $this->schedulesList = $resource['schedule'] ?? [];
+        if ($resource) {
+            $doctorName = $resource['name'];
+            $polyclinicName = $resource['polyclinic']['name'] ?? $resource['polyclinic'] ?? '-';
+            $this->schedulesList = collect($resource['schedule'] ?? [])->map(function ($item) use ($doctorName, $polyclinicName) {
+                $item['name'] = $doctorName;
+                if (!isset($item['polyclinic'])) {
+                    $item['polyclinic'] = $polyclinicName;
+                }
+                return $item;
+            })->toArray();
+        }
     }
-
     public function fetchSchedule(ApiService $api)
     {
         $today = strtoupper(now()->locale('id')->dayName);

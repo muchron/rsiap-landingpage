@@ -6,8 +6,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.beranda');
-});
+})->name('index');
 
+
+Route::get('/layanan', function () {
+    return view('errors.404');
+})->name('layanan');
+Route::get('/karir', function () {
+    return view('errors.404');
+})->name('karir');
 
 Route::get('/artikel', [App\Http\Controllers\Pages\Artikel::class, 'index'])->name('artikel');
 Route::get('/artikel/{slug}', [App\Http\Controllers\Pages\Artikel::class, 'get'])->name('artikel.read');

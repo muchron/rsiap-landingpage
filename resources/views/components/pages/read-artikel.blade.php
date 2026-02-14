@@ -46,29 +46,15 @@
         .dark .article-content h4,
         .dark .article-content h5,
         .dark .article-content h6 {
-            color: #e6e6e6 !important;
+            color: #d0d0d0 !important;
         }
 
         .dark .article-content p {
-            color: #e6e6e6 !important;
+            color: #d0d0d0 !important;
         }
     </style>
 @endpush
 @section('content')
-    {{-- <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
-        <div>
-            <img class="h-auto w-full rounded-lg" src="{{ $artikel['cover'] }}" alt="image {{ $artikel['title'] }}">
-        </div>
-        <div>
-            <div class="flex items-center justify-between mb-4">
-                <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Artikel Terkait</h5>
-                <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                    Lihat Semua <i class="ri-arrow-right-line"></i>
-                </a>
-            </div>
-            <livewire:pages.sub.related-articles :slug="$artikel['category']['slug']" />
-        </div>
-    </div> --}}
     <div class="container mx-auto w-full md:p-0 px-10 md:mt-24 mt-16">
         <div class="col-span-3">
             <div id="info_artikel">
@@ -85,9 +71,9 @@
                         <i class="ri-user-line"></i> {{ $artikel['author'] }}
                     </span>
                 </div>
-                <img class="w-full h-64 md:h-96 object-cover rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
+                <img class="w-full h-64 md:h-144 object-cover rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
             </div>
-            <div class="article-content text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
+            <div class="article-content mt-6 text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
                 <p class="text-justify">{!! $artikel['body'] !!}</p>
 
             </div>
@@ -102,17 +88,20 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p>
         </div> --}}
     </div>
-    <div class="container mx-auto w-full md:p-0 px-10 md:mt-10 mt-5">
-        <div class="flex items-center justify-between mb-6">
-            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Artikel Lainnya</h5>
-            <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                Lihat Semua <i class="ri-arrow-right-line"></i>
-            </a>
-        </div>
+    <div class="bg-green-100 h-full w-full md:p-10 px-5 py-5 md:mt-10 mt-5 dark:bg-gray-800">
 
-      
+        <div class="container mx-auto w-full">
+            <div class="flex items-center justify-between mb-6">
+                <h5 class="text-xl font-bold text-gray-900 dark:text-white">Artikel Lainnya</h5>
+                <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                    Lihat Semua <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+
+
             <livewire:pages.sub.related-articles :slug="$artikel['category']['slug']" />
-   
+
+        </div>
     </div>
 @endsection
 @push('scripts')

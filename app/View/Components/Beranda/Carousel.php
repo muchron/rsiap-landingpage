@@ -23,12 +23,12 @@ class Carousel extends Component
     public function render(): View|Closure|string
     {
         return view('components.beranda.carousel', [
-            'articles' => $this->artikel(new ApiService())
+            'carousels' => $this->carousel(new ApiService()),
         ]);
     }
-    public function artikel(ApiService $api)
+    public function carousel(ApiService $api)
     {
-        $body = $api->get('articles', ['per_page' => 4])->body();
+        $body = $api->get('carousels')->body();
         $bodyJson = json_decode($body, true);
 
         return $bodyJson['data'];

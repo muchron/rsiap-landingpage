@@ -20,31 +20,31 @@
     <div class="container mx-auto py-10 w-full px-12">
         <div class="relative shadow-md sm:rounded-lg overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-white uppercase bg-gray-500 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th class="px-6 py-3">Poliklinik</th>
-                        <th class="px-6 py-3">Dokter</th>
-                        <th class="px-6 py-3">Hari</th>
-                        <th class="px-6 py-3">Mulai</th>
-                        <th class="px-6 py-3">Selesai</th>
+                        <th class="text-center px-6 py-3">Hari</th>
+                        <th class="text-center px-6 py-3">Poliklinik</th>
+                        <th class="text-center px-6 py-3">Dokter</th>
+                        <th class="text-center px-6 py-3">Mulai</th>
+                        <th class="text-center px-6 py-3">Selesai</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($schedulesList as $index => $item)
-                        <tr class="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-                            <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">
-                                {{ $item['polyclinic'] ?? '-' }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ $item['name'] ?? '-' }}
-                            </td>
-                            <td class="px-6 py-4">
+                        <tr class="bg-white even:bg-gray-50 border-b border-gray-100 dark:bg-gray-900 dark:even:bg-gray-800 dark:border-gray-700 hover:bg-green-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="text-center px-6 py-4">
                                 {{ $item['day'] ?? '-' }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="text-center px-6 py-4 font-bold text-gray-900 dark:text-white">
+                                {{ $item['polyclinic'] ?? '-' }}
+                            </td>
+                            <td class="text-center px-6 py-4">
+                                {{ $item['name'] ?? '-' }}
+                            </td>
+                            <td class="text-center px-6 py-4">
                                 {{ isset($item['start_at']) ? \Carbon\Carbon::parse($item['start_at'])->format('H:i') : '-' }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="text-center px-6 py-4">
                                 {{ isset($item['end_at']) ? \Carbon\Carbon::parse($item['end_at'])->format('H:i') : '-' }}
                             </td>
                         </tr>

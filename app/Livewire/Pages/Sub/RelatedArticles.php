@@ -22,7 +22,15 @@ class RelatedArticles extends Component
 
     public function fetchArticlesWithCategory(ApiService $api, string $slug)
     {
-        $this->articles = json_decode($api->get("categories/{$slug}")->body(), true);
+        $response = $api->get("categories/{$slug}")->json();
+
+        $articles = collect($response['data']['articles'] ?? []);
+
+        $this->articles = $articles
+            ->shuffle()     // random
+            ->take(6)       // ambil 6 saja
+            ->values()      // reset index
+            ->toArray();
     }
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="carrousel" class="md:mt-14 mt-16">
-        @include('components.beranda.carousel')
+        <x-beranda.carousel />
     </div>
     <div id="hero" class="bg-green-100 dark:bg-gray-800">
         @include('components.beranda.hero')
@@ -15,7 +15,6 @@
 
 
     <div id="artikel" class="bg-green-100 dark:bg-gray-800">
-        {{-- @include('components.beranda.artikel') --}}
         <x-beranda.artikel />
     </div>
 
