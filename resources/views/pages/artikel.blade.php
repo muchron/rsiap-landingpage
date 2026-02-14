@@ -1,112 +1,61 @@
 @extends('app')
 
 @section('content')
-    <div class="container grid grid-cols-1 gap-4 md:grid-cols-2 mx-auto w-full md:p-0 px-10 md:mt-24 mt-16 ">
+    <main class="container mx-auto w-full grid grid-cols-1 gap-8 md:grid-cols-2 mt-8 md:mt-8">
+
         <x-artikel.carousel />
+
         <div class="box -mt-8">
             <div class="w-full p-4 sm:p-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Artikel Terbaru</h5>
-                    {{-- <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                        Lihat Semua <i class="ri-arrow-right-line"></i>
-                    </a> --}}
+                <div class="flex items-center justify-between mb-6">
+                    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
+                        Artikel Terbaru
+                    </h5>
                 </div>
-                <div class="dark:bg-gray-800 bg-green-100 p-7 rounded-xl">
 
-                    <ul role="list" class="divide-green-200 dark:divide-gray-700">
+                <div class="bg-green-100 dark:bg-gray-800 p-5 rounded-xl">
+                    <ul role="list" class="divide-y divide-green-200 dark:divide-gray-700">
                         @forelse ($newArticles as $item)
-                            <li class="py-2 sm:py-2">
-                                <div class="flex items-center">
+                            <li class="py-4 first:pt-0 last:pb-0">
+                                <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
-                                        <img class="w-8 h-8 rounded-xl object-cover" src="{{ $item['cover'] }}" alt="Neil image">
+                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm"
+                                            src="{{ $item['cover'] }}"
+                                            alt="{{ $item['title'] }}">
                                     </div>
-                                    <div class="flex-1 min-w-0 ms-4">
-                                        <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wider">
                                             {{ $item['category']['name'] }}
                                         </p>
-                                        <a href="{{ route('artikel.read', $item['slug']) }}" class="text-medium font-medium text-green-600 dark:text-green-400 hover:text-green-900" wire:navigate>
+
+                                        <a href="{{ route('artikel.read', $item['slug']) }}"
+                                            class="block text-lg font-bold text-gray-800 dark:text-white hover:text-green-600 transition-colors duration-200 leading-tight"
+                                            wire:navigate>
                                             {{ $item['title'] }}
                                         </a>
-                                        <div class="flex justify-between text-xs text-gray-500 truncate dark:text-gray-400">
-                                            <p class="">
-                                                <i class="ri-calendar-line"></i> 08 Januari 2025
-                                            </p>
-                                            <p>
-                                                <i class="ri-user-line"></i> {{ $item['author'] }}
-                                            </p>
-                                        </div>
 
+                                        <div class="flex items-center gap-4 mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                            <span class="flex items-center gap-1">
+                                                <i class="ri-calendar-line"></i> 08 Januari 2025
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <i class="ri-user-line"></i> {{ $item['author'] }}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                         @empty
+                            <li class="text-center text-gray-500 py-4">Belum ada artikel terbaru.</li>
                         @endforelse
-
-                        {{-- <li class="py-2 sm:py-2">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-sm" src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        Penyakit Kandungan dan Kebidanan
-                                    </p>
-                                    <a href="#" class="text-medium font-medium text-green-600 dark:text-green-400 hover:text-green-900">
-                                        Nulla elit magna incididunt aliqua irure eu.
-                                    </a>
-                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                        <i class="ri-calendar-line"></i> 08 Januari 2025, <i class="ri-user-line"></i> Author
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-2 sm:py-2">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-sm" src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        Penyakit Kandungan dan Kebidanan
-                                    </p>
-                                    <a href="#" class="text-medium font-medium text-green-600 dark:text-green-400 hover:text-green-900">
-                                        Nulla elit magna incididunt aliqua irure eu.
-                                    </a>
-                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                        <i class="ri-calendar-line"></i> 08 Januari 2025, <i class="ri-user-line"></i> Author
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="py-2 sm:py-2">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-sm" src="{{ asset('images/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg') }}" alt="Neil image">
-                                </div>
-                                <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        Penyakit Kandungan dan Kebidanan
-                                    </p>
-                                    <a href="#" class="text-medium font-medium text-green-600 dark:text-green-400 hover:text-green-900">
-                                        Nulla elit magna incididunt aliqua irure eu.
-                                    </a>
-                                    <p class="text-xs text-gray-500 truncate dark:text-gray-400">
-                                        <i class="ri-calendar-line"></i> 08 Januari 2025, <i class="ri-user-line"></i> Author
-                                    </p>
-                                </div>
-                            </div>
-                        </li> --}}
-
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="container mx-auto md:p-0 px-6 w-full">
+    <section class="container mx-auto w-full px-6 md:px-0 my-2">
         <livewire:pages.artikel />
-    </div>
+    </section>
 @endsection
-
-@push('scripts')
-@endpush

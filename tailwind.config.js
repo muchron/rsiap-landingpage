@@ -9,21 +9,22 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        './node_modules/flowbite/**/*.js' //
     ],
 
     darkMode: 'class',
     theme: {
-        colors: {
-            gray: colors.grau,
-            blue: colors.sky,
-            red: colors.rose,
-            pink: colors.fuchsia,
-        },
-        fontFamily: {
-            sans: ['Graphik', 'sans-serif'],
-            serif: ['Merriweather', 'serif'],
-        },
         extend: {
+            colors: {
+                gray: colors.gray,
+                blue: colors.sky,
+                red: colors.rose,
+                pink: colors.fuchsia,
+            },
+            fontFamily: {
+                sans: ['Graphik', ...defaultTheme.fontFamily.sans],
+                serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
+            },
             spacing: {
                 '1': '0.5rem',
                 '128': '32rem',
@@ -34,5 +35,7 @@ export default {
             }
         }
     },
-    plugins: [('flowbite/plugin')],
+    plugins: [
+        require('flowbite/plugin') // Perbaikan cara memanggil plugin
+    ],
 };

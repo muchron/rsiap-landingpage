@@ -55,7 +55,7 @@
     </style>
 @endpush
 @section('content')
-    <div class="container mx-auto w-full md:p-0 px-10 md:mt-24 mt-16">
+    <div class="container mx-auto w-full md:p-0 px-10 md:mt-4 mt-4">
         <div class="col-span-3">
             <div id="info_artikel">
                 <h1 class="text-3xl font-extrabold text-green-600 dark:text-green-400">{{ $artikel['title'] }}</h1>
@@ -71,7 +71,7 @@
                         <i class="ri-user-line"></i> {{ $artikel['author'] }}
                     </span>
                 </div>
-                <img class="w-full h-64 md:h-144 object-cover rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
+                <img class="w-full object-cover aspect-[21/9] rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
             </div>
             <div class="article-content mt-6 text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
                 <p class="text-justify">{!! $artikel['body'] !!}</p>

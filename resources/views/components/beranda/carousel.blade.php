@@ -1,10 +1,10 @@
 <div id="default-carousel" class="relative w-full z-0 -mt-2" data-carousel="slide" wire:ignore>
-    <div class="relative h-60 overflow-hidden lg:h-[640px]">
+    <div class="relative w-full aspect-[21/9] overflow-hidden">
         @foreach ($carousels as $index => $item)
             {{-- Loop Carousel Item --}}
             <div class="hidden duration-700 ease-in-out" data-carousel-item="{{ $index === 0 ? 'active' : '' }}">
                 <img src="{{ $item['image'] }}"
-                    class="absolute object-cover h-full block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     alt="Carousel Image {{ $index + 1 }}" loading="lazy">
             </div>
         @endforeach

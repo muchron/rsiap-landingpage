@@ -21,18 +21,16 @@
     @livewireStyles
 </head>
 
-<body class="bg-white dark:bg-gray-900">
-    <header>
-        @include('components.navbar')
+<body class="bg-white dark:bg-gray-900 flex flex-col min-h-screen">
+    <header class="fixed top-0 w-full z-50"> @include('components.navbar')
     </header>
-    <main>
+
+    <main class="flex-grow pt-16 lg:pt-20">
         @yield('content')
     </main>
 
-    <footer class="bg-white dark:bg-gray-900 bottom-0 mt-30">
-        @include('components.footer')
+    <footer class="bg-white dark:bg-gray-900 mt-auto"> @include('components.footer')
     </footer>
-
 
 
     @stack('scripts')

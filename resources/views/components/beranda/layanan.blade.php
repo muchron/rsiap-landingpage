@@ -1,45 +1,123 @@
-<div class="container mx-auto w-full p-6">
-    <h1 class="md:text-2xl text-5xl font-extrabold text-center text-green-600 dark:text-green-400 mb-6">Layanan</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch py-6 px-10 md:px-8">
-        @foreach ($layanan as $value)
-            <a href="#" class="group flex flex-col justify-center items-center h-full p-6 bg-white border border-gray-100 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:z-10 dark:bg-gray-800 dark:border-gray-700">
+<div class="container mx-auto w-full px-4 py-8">
 
-                {{-- Logika Custom Icon berdasarkan Slug --}}
-                <div class="text-5xl mb-4 text-green-600 transition-transform group-hover:rotate-6 dark:text-green-400">
+    <h1 class="text-3xl md:text-5xl font-extrabold text-center 
+               text-green-600 dark:text-green-400 mb-8">
+        Layanan
+    </h1>
+
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 
+                gap-4 md:gap-6">
+
+        @foreach ($layanan as $value)
+            <a href="#"
+                class="group flex flex-col justify-center items-center 
+                      h-full p-4 md:p-6
+                      bg-white border border-gray-100 shadow-sm
+                      transition-all duration-300 
+                      hover:scale-105 hover:shadow-xl hover:z-10
+                      dark:bg-gray-800 dark:border-gray-700
+                      rounded-xl">
+
+                {{-- Icon --}}
+                <div class="text-3xl md:text-5xl mb-3 md:mb-4
+                            text-green-600 transition-transform 
+                            group-hover:rotate-6 
+                            dark:text-green-400">
+
                     @php
-                        // Ambil icon dari map berdasarkan slug, gunakan icon default jika tidak ketemu
                         $iconClass = $iconMap[$value['slug']] ?? 'ri-file-list-3-line';
                     @endphp
+
                     <i class="{{ $iconClass }}"></i>
                 </div>
 
-                <h5 class="text-center text-lg md:text-xl font-bold uppercase tracking-tight text-gray-900 dark:text-white">
+                {{-- Title --}}
+                <h5 class="text-center text-sm md:text-lg 
+                           font-bold uppercase tracking-tight 
+                           text-gray-900 dark:text-white">
                     {{ $value['name'] }}
                 </h5>
 
             </a>
         @endforeach
+
     </div>
+
 </div>
+<section class="relative overflow-hidden">
 
+    {{-- Background Gradient (Day & Dark Consistent) --}}
+    <div class="absolute inset-0 
+                bg-gradient-to-br 
+                from-green-50 via-green-100 to-green-200
+                dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    </div>
 
-
-<section class="flex flex-col lg:flex-row min-h-[300px] max-h-[380px] overflow-hidden bg-green-100 dark:bg-gray-800 text-white relative">
-    <div class="w-full lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center text-center lg:text-left h-full">
-        <h2 class="text-green-400 dark:text-green-300 text-2xl font-semibold mb-2">RSIAP Mobile</h2>
-        <h1 class="text-green-600 dark:text-green-400 text-4xl lg:text-5xl font-bold leading-tight mb-4">Daftar Periksa Lebih Mudah</h1>
-        <p class="text-gray-500 dark:text-white mb-8 max-w-lg mx-auto lg:mx-0">
-            Dengan RSIAP Mobile, periksa jadwal dokter, buat janji, dan dapatkan estimasi antrian sebelum mengunjungi. Kemudahan pelayanan kesehatan ada di tangan Anda.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="#" class="inline-flex items-center justify-center bg-green-800 dark:bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition duration-300">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="h-8 mr-2">
-                Google Play
-            </a>
+    {{-- Image Background Right --}}
+    <div class="absolute inset-0">
+        <div class="absolute inset-0 
+                    bg-gradient-to-r 
+                    from-green-100/95 via-green-100/80 to-transparent
+                    dark:from-gray-900/95 dark:via-gray-900/80 dark:to-transparent
+                    z-10">
         </div>
+
+        <img src="{{ asset('images/rsiap-mobile.png') }}"
+            alt="RSIAP Mobile"
+            class="absolute right-0 top-0 h-full w-auto 
+                    max-w-none object-contain 
+                    opacity-90">
     </div>
 
-    <div class="w-full lg:w-1/2 flex justify-end items-center h-full">
-        <img src="{{ asset('images/rsiap-mobile-mockup.png') }}" alt="Halo Hermina App on Phone" class="h-full w-full object-fill">
+    {{-- Content --}}
+    <div class="relative z-20 container mx-auto 
+                px-6 lg:px-16 
+                py-20 lg:py-28">
+
+        <div class="max-w-xl text-center lg:text-left">
+
+            <h2 class="text-green-600 
+                       dark:text-green-400
+                       text-lg md:text-xl font-semibold mb-3">
+                RSIAP Mobile
+            </h2>
+
+            <h1 class="text-3xl md:text-4xl lg:text-5xl 
+                       font-extrabold leading-tight mb-6
+                       text-green-800 
+                       dark:text-white">
+                Daftar Periksa Lebih Mudah & Cepat
+            </h1>
+
+            <p class="text-gray-700 
+                      dark:text-gray-300
+                      mb-8 text-sm md:text-base leading-relaxed">
+                Dengan RSIAP Mobile, periksa jadwal dokter, buat janji,
+                dan dapatkan estimasi antrian sebelum mengunjungi.
+                Kemudahan pelayanan kesehatan kini ada di tangan Anda.
+            </p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.rsiap.mobile&pcampaignid=web_share"
+                target="_blank"
+                class="inline-flex items-center 
+                      bg-green-600 text-white
+                      px-6 py-3 rounded-xl 
+                      font-semibold shadow-lg
+                      hover:bg-green-700
+                      dark:bg-green-500 
+                      dark:hover:bg-green-400
+                      transition-all duration-300 
+                      hover:scale-105">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Google Play"
+                    class="h-8 mr-3">
+
+                Download Sekarang
+            </a>
+
+        </div>
+
     </div>
+
 </section>

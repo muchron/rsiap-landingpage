@@ -4,18 +4,20 @@
         <div class="flex bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-gray-800 dark:border-gray-700">
 
             <div class="w-1/3 flex-shrink-0">
-                <img class="w-full h-full object-cover aspect-square"
-                    src="{{ $item['cover'] }}"
-                    alt="{{ $item['title'] }}">
+                <a href="{{ route('artikel.read', $item['slug']) }}" wire:navigate>
+                    <img class="w-full h-full object-cover aspect-square"
+                        src="{{ $item['cover'] }}"
+                        alt="{{ $item['title'] }}">
+                </a>
             </div>
 
             <div class="w-2/3 p-4 flex flex-col justify-between">
-                <h3 class="text-sm md:text-base font-bold text-green-700 dark:text-green-400 line-clamp-2 leading-tight">
-                    <a href="#">{{ $item['title'] }}</a>
+                <h3 class="text-sm md:text-base font-bold text-green-700 dark:text-green-400 line-clamp-2 leading-tight hover:text-green-800 dark:hover:text-green-400">
+                    <a href="{{ route('artikel.read', $item['slug']) }}" wire:navigate>{{ $item['title'] }}</a>
                 </h3>
 
-                <p class="text-[11px] text-gray-500 mt-2 line-clamp-2">
-                    {{ \Illuminate\Support\Str::limit(strip_tags($item['body']), 80) }}
+                <p class="text-[11px] text-gray-500 line-clamp-2">
+                    {{ \Illuminate\Support\Str::limit(strip_tags($item['body']), 150) }}
                 </p>
 
                 <div class="flex justify-between items-center mt-3 text-[10px] text-gray-400">
