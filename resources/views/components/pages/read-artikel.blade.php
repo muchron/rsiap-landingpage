@@ -71,7 +71,7 @@
                         <i class="ri-user-line"></i> {{ $artikel['author'] }}
                     </span>
                 </div>
-                <img class="w-full object-cover aspect-[21/9] rounded-lg" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
+                <img class="w-full object-cover aspect-[21/9] rounded-lg dark:brightness-[0.6] dark:contrast-[1.1]" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
             </div>
             <div class="article-content mt-6 text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
                 <p class="text-justify">{!! $artikel['body'] !!}</p>

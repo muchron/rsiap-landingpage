@@ -25,7 +25,7 @@
     <header class="fixed top-0 w-full z-50"> @include('components.navbar')
     </header>
 
-    <main class="flex-grow pt-16 lg:pt-20">
+    <main class="flex-grow pt-16 lg:pt-20 lg:mt-12">
         @yield('content')
     </main>
 

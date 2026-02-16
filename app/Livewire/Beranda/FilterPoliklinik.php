@@ -11,12 +11,14 @@ class FilterPoliklinik extends Component
     public $doctorData = [];
     public $poliklinik = ['data' => []];
     public $selectedDoctor = null;
+    public $selectedDate = null;
     public $schedulesList = [];
     public $currentDay = '';
 
     public function mount(ApiService $api)
     {
-        // Set hari ini untuk label di UI nanti
+
+        $this->selectedDate = now()->format('d/m/Y');
         $this->currentDay = strtoupper(now()->locale('id')->dayName);
 
         $this->fetchDoctor($api);
@@ -40,45 +42,64 @@ class FilterPoliklinik extends Component
         $this->poliklinik = $response->successful() ? $response->json() : ['data' => []];
     }
 
-    // public function changeDoctor()
-    // {
-    //     if (!$this->selectedDoctor) {
-    //         // Jika pilihan dokter dihapus, tampilkan lagi jadwal semua dokter hari ini
-    //         $this->fetchSchedule(new ApiService());
-    //         return;
-    //     }
+    // Fungsi ini akan dipanggil otomatis saat selectedDate berubah
+    public function updatedSelectedDate($value)
+    {
+        // Konversi string dd/mm/yyyy menjadi Carbon object
+        $date = Carbon::createFromFormat('d/m/Y', $value);
 
-    //     $resource = collect($this->doctorData)->firstWhere('slug', $this->selectedDoctor);
+        // Update nama hari (biar keterangan 'Mencari jadwal untuk: SENIN' ikut berubah)
+        $this->currentDay = strtoupper($date->locale('id')->dayName);
 
-    //     // Pastikan kita mengambil key 'schedule' dari data dokter
-    //     $this->schedulesList = $resource['schedule'] ?? [];
-    // }
+        // Panggil fungsi ambil data/jadwal Anda
+        $this->fetchSchedule(app(ApiService::class));
+    }
 
     public function changeDoctor()
     {
+        // 1. Jika tidak ada dokter yang dipilih, kembalikan ke jadwal umum hari tersebut
         if (!$this->selectedDoctor) {
             $this->fetchSchedule(app(ApiService::class));
             return;
         }
 
+        // 2. Cari data dokter berdasarkan slug
         $resource = collect($this->doctorData)->firstWhere('slug', $this->selectedDoctor);
 
         if ($resource) {
             $doctorName = $resource['name'];
             $polyclinicName = $resource['polyclinic']['name'] ?? $resource['polyclinic'] ?? '-';
-            $this->schedulesList = collect($resource['schedule'] ?? [])->map(function ($item) use ($doctorName, $polyclinicName) {
-                $item['name'] = $doctorName;
-                if (!isset($item['polyclinic'])) {
-                    $item['polyclinic'] = $polyclinicName;
-                }
-                return $item;
-            })->toArray();
+
+            // 3. Ambil semua jadwal dokter tersebut, tapi FILTER hanya untuk HARI YANG DIPILIH
+            $this->schedulesList = collect($resource['schedule'] ?? [])
+                ->filter(function ($item) {
+                    // Pastikan nama hari di jadwal cocok dengan hari yang dipilih di datepicker
+                    return strtoupper($item['day']) === strtoupper($this->currentDay);
+                })
+                ->map(function ($item) use ($doctorName, $polyclinicName) {
+                    $item['name'] = $doctorName;
+                    if (!isset($item['polyclinic'])) {
+                        $item['polyclinic'] = $polyclinicName;
+                    }
+                    return $item;
+                })
+                ->toArray();
         }
+    }
+
+    public function resetFilter()
+    {
+        $this->selectedDoctor = null;
+        $this->selectedDate = now()->format('d/m/Y');
+        $this->currentDay = strtoupper(now()->locale('id')->dayName);
+
+        // Refresh jadwal ke kondisi default (semua jadwal hari ini)
+        $this->fetchSchedule(app(ApiService::class));
     }
     public function fetchSchedule(ApiService $api)
     {
-        $today = strtoupper(now()->locale('id')->dayName);
-        $response = $api->get("schedules/day/{$today}");
+        // Sekarang menggunakan $this->currentDay yang dinamis
+        $response = $api->get("schedules/day/{$this->currentDay}");
 
         if ($response->successful()) {
             $result = $response->json();

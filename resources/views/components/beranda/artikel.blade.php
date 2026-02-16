@@ -3,10 +3,8 @@
                 from-green-50 via-green-100 to-green-200
                 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-        {{-- LEFT CONTENT --}}
-        <div class="lg:col-span-4">
+    <div class="lg:max-w-screen-2xl xl:max-w-screen-3xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-3">
 
             <h2 class="text-4xl font-bold 
                        text-green-700 
@@ -53,7 +51,7 @@
         </div>
 
         {{-- RIGHT CONTENT --}}
-        <div class="lg:col-span-8">
+        <div class="lg:col-span-9">
 
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
@@ -76,7 +74,7 @@
                             <div class="h-48 overflow-hidden">
                                 <img class="w-full h-full object-cover 
                                             transition-transform duration-500 
-                                            hover:scale-105"
+                                            hover:scale-105 dark:brightness-[0.6] dark:contrast-[1.1]"
                                     src="{{ $article['cover'] }}"
                                     alt="{{ $article['title'] }}" />
                             </div>

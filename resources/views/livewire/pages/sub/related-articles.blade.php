@@ -5,7 +5,7 @@
 
             <div class="w-1/3 flex-shrink-0">
                 <a href="{{ route('artikel.read', $item['slug']) }}" wire:navigate>
-                    <img class="w-full h-full object-cover aspect-square"
+                    <img class="w-full h-full object-cover aspect-[21/9] dark:brightness-[0.6] dark:contrast-[1.1]"
                         src="{{ $item['cover'] }}"
                         alt="{{ $item['title'] }}">
                 </a>

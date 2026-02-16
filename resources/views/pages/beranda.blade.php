@@ -4,15 +4,10 @@
     <div id="carrousel">
         <x-beranda.carousel />
     </div>
-    <div id="hero" class="bg-green-100 dark:bg-gray-800">
-        @include('components.beranda.hero')
-    </div>
 
     <div id="poliklinik" class="mt-10">
         <livewire:beranda.filter-poliklinik />
     </div>
-
-
 
     <div id="artikel" class="">
         <x-beranda.artikel />

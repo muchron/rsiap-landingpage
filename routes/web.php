@@ -19,6 +19,18 @@ Route::get('/karir', function () {
 Route::get('/artikel', [App\Http\Controllers\Pages\Artikel::class, 'index'])->name('artikel');
 Route::get('/artikel/{slug}', [App\Http\Controllers\Pages\Artikel::class, 'get'])->name('artikel.read');
 
+Route::prefix('profile')->group(function () {
+    Route::get('/tentang-kami', function () {
+        return view('pages.profile.tentang-kami');
+    })->name('profile.tentang-kami');
+    Route::get('/struktur-organisasi', function () {
+        return view('errors.404');
+    })->name('profile.struktur-organisasi');
+    Route::get('/akreditasi', function () {
+        return view('errors.404');
+    })->name('profile.akreditasi');
+});
+
 Route::get('/test', function (ApiService $api) {
     return $api->get('polyclinics');
 });

@@ -64,9 +64,10 @@
 
         <img src="{{ asset('images/rsiap-mobile.png') }}"
             alt="RSIAP Mobile"
-            class="absolute right-0 top-0 h-full w-auto 
-                    max-w-none object-contain 
-                    opacity-90">
+            class="absolute top-0 left-1/4 md:left-auto md:right-0 h-full w-auto 
+            max-w-none object-contain 
+            opacity-80 md:opacity-90 
+            -translate-x-1/2 md:translate-x-0">
     </div>
 
     {{-- Content --}}
