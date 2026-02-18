@@ -9,13 +9,13 @@
             <div class="flex items-center gap-2 md:gap-4">
                 {{-- Tombol IGD --}}
                 <a href="tel:0285123456"
-                    class="flex text-[10px] md:text-sm items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-sm">
+                    class="flex text-[10px] md:text-sm lg:text-xs items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-sm">
                     <i class="ri-phone-fill"></i>
                     <span class="tracking-wide">IGD: <span class="font-bold">(0285) 785909</span> | <i class="ri-clock-line"></i> 24 Jam</span>
                 </a>
 
                 {{-- Informasi & Pendaftaran --}}
-                <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-default border border-white/10">
+                <div class="hidden text-[10px] md:text-sm lg:text-xs sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-default border border-white/10">
                     <i class="ri-information-line text-green-300"></i>
                     <span class="font-medium">Pendaftaran: 0856-4000-9934</span>
                 </div>
@@ -45,7 +45,7 @@
         class="sticky top-0 z-50 bg-white/70 backdrop-blur-md dark:bg-gray-900 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-            <a href="{{ route('index') }}" class="flex items-start space-x-3 rtl:space-x-reverse">
+            <a href="{{ route('index') }}" class="flex items-start space-x-3 rtl:space-x-reverse" wire:navigate>
                 <img src="{{ asset('images/logo-rsia-2.png') }}"
                     class="hidden dark:inline h-7 md:h-10"
                     alt="RSIA Aisyiyah Pekajangan">

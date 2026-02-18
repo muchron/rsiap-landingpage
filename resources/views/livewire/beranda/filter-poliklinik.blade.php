@@ -24,7 +24,6 @@
                     x-data
                     x-init="initDatepicker($el, @js($selectedDate))">
 
-                    {{-- Input dan Label tetap sama --}}
                     <label class="block mb-1.5 text-[10px] font-bold uppercase tracking-wider text-gray-400">
                         <i class="ri-calendar-check-line mr-1"></i> Tanggal Kunjungan
                     </label>
@@ -55,17 +54,13 @@
                                 <option value="{{ $item['slug'] }}">{{ $item['name'] }}</option>
                             @endforeach
                         </select>
-                        <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none text-gray-400">
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Status Filter (Dibuat Lebih Tipis) --}}
+            {{-- Status Filter --}}
             <div class="mt-4 pt-4 border-t border-gray-50 dark:border-gray-700/50">
                 <div class="flex flex-wrap items-center justify-between gap-3">
-                    {{-- Status Filter & Tombol Reset --}}
                     @if ($selectedDoctor || ($selectedDate && $selectedDate !== now()->format('d/m/Y')))
                         <div class="border-gray-50 dark:border-gray-700/50 flex flex-wrap items-center justify-between gap-3 animate-fade-in">
                             <div class="flex items-center gap-2 text-[11px] font-medium text-gray-500">
@@ -80,7 +75,6 @@
                                 @endif
                             </div>
 
-                            {{-- TOMBOL RESET YANG DIJANJIKAN --}}
                             <button wire:click="resetFilter"
                                 class="text-[11px] font-bold text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 px-3 py-1 rounded-lg transition-all flex items-center gap-1">
                                 <i class="ri-close-line"></i> Reset Filter
@@ -95,69 +89,82 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto py-8 px-4 md:px-12 max-w-screen-2xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            @forelse ($schedulesList as $item)
-                <div class="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-3 shadow-sm hover:shadow-md transition-all duration-200">
+
+    {{-- AREA JADWAL --}}
+    <div class="container mx-auto py-8 px-4 md:px-12 max-w-screen-2xl relative">
+
+        {{-- Skeleton Loader: Tampil hanya saat request dikirim --}}
+        <div wire:loading.grid class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            @for ($i = 0; $i < 4; $i++)
+                {{-- Dikurangi jadi 4 agar tidak terlalu panjang saat loading --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-3 animate-pulse">
                     <div class="flex items-center gap-4">
-                        {{-- Foto Dokter Lebih Kecil --}}
-                        <div class="flex-shrink-0">
-                            <img src="{{ $item['photo'] ?? 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=f0fdf4&color=16a34a' }}"
-                                alt="{{ $item['name'] }}"
-                                class="w-16 h-16 rounded-xl object-cover">
+                        <div class="flex-shrink-0 w-16 h-16 bg-green-50 dark:bg-gray-700 rounded-xl"></div>
+                        <div class="flex-1 space-y-2">
+                            <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+                            <div class="h-2 bg-green-100 dark:bg-green-900/30 rounded w-1/2"></div>
                         </div>
+                    </div>
+                    <div class="mt-4 h-8 bg-gray-50 dark:bg-gray-700 rounded-lg w-full"></div>
+                </div>
+            @endfor
+        </div>
 
-                        {{-- Info Ringkas --}}
-                        <div class="min-w-0 flex-1">
-                            <h3 class="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-green-600 transition-colors">
-                                {{ $item['name'] }}
-                            </h3>
-                            <p class="text-[10px] font-bold text-green-600 dark:text-green-400 uppercase tracking-tight truncate">
-                                {{ $item['polyclinic'] }}
-                            </p>
+        {{-- Daftar Asli: Gunakan block condisional agar jika kosong, element benar-benar hilang --}}
+        <div wire:loading.remove>
+            @if (count($schedulesList) > 0)
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    @foreach ($schedulesList as $item)
+                        <div wire:key="schedule-{{ $loop->index }}-{{ $item['slug'] ?? $loop->index }}"
+                            class="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-3 shadow-sm hover:shadow-md transition-all duration-200">
+                            <div class="flex items-center gap-4">
+                                <div class="flex-shrink-0">
+                                    <img src="{{ $item['photo'] ?? 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=f0fdf4&color=16a34a' }}"
+                                        alt="{{ $item['name'] }}"
+                                        class="w-16 h-16 rounded-xl object-cover">
+                                </div>
 
-                            {{-- Jam Praktik --}}
-                            <div class="mt-2 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 font-medium">
-                                <i class="ri-time-fill text-green-500 text-sm"></i>
-                                <span>
-                                    {{ isset($item['start_at']) ? \Carbon\Carbon::parse($item['start_at'])->format('H:i') : '-' }}
-                                    -
-                                    {{ isset($item['end_at']) ? \Carbon\Carbon::parse($item['end_at'])->format('H:i') : '-' }}
-                                </span>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-green-600 transition-colors">
+                                        {{ $item['name'] }}
+                                    </h3>
+                                    <p class="text-[10px] font-bold text-green-600 dark:text-green-400 uppercase tracking-tight truncate">
+                                        {{ $item['polyclinic'] }}
+                                    </p>
+
+                                    <div class="mt-2 flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 font-medium">
+                                        <i class="ri-time-fill text-green-500 text-sm"></i>
+                                        <span>
+                                            {{ isset($item['start_at']) ? \Carbon\Carbon::parse($item['start_at'])->format('H:i') : '-' }}
+                                            -
+                                            {{ isset($item['end_at']) ? \Carbon\Carbon::parse($item['end_at'])->format('H:i') : '-' }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                @php
+                                    $pesanWa = 'Halo RSIA Aisyiyah, saya ingin mendaftar pemeriksaan:' . "\nDokter: " . $item['name'] . "\nPoliklinik: " . $item['polyclinic'] . "\nTanggal: " . ($selectedDate ?? date('d/m/Y')) . "\nJam: " . \Carbon\Carbon::parse($item['start_at'])->format('H:i') . ' - ' . \Carbon\Carbon::parse($item['end_at'])->format('H:i');
+                                @endphp
+                                <a href="https://wa.me/628123456789?text={{ urlencode($pesanWa) }}"
+                                    target="_blank"
+                                    class="flex items-center justify-center w-full py-2 text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 hover:bg-green-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white rounded-lg transition-all border border-green-100 dark:border-green-900">
+                                    <i class="ri-whatsapp-line mr-1.5"></i> Daftar Online
+                                </a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="mt-3">
-                        @php
-                            // Siapkan pesan teks untuk WhatsApp
-                            $pesanWa =
-                                'Halo RSIA Aisyiyah, saya ingin mendaftar pemeriksaan:' .
-                                "\nDokter: " .
-                                $item['name'] .
-                                "\nPoliklinik: " .
-                                $item['polyclinic'] .
-                                "\nTanggal: " .
-                                ($selectedDate ?? date('d/m/Y')) . // Ambil dari variabel $selectedDate
-                                "\nJam: " .
-                                \Carbon\Carbon::parse($item['start_at'])->format('H:i') .
-                                ' - ' .
-                                \Carbon\Carbon::parse($item['end_at'])->format('H:i');
-                        @endphp
-
-                        <a href="https://wa.me/628123456789?text={{ urlencode($pesanWa) }}"
-                            target="_blank"
-                            class="flex items-center justify-center w-full py-2 text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 hover:bg-green-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white rounded-lg transition-all border border-green-100 dark:border-green-900/30">
-                            <i class="ri-whatsapp-line mr-1.5"></i>
-                            Daftar Online
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
-            @empty
-                <div class="col-span-full py-10 text-center text-gray-400 text-sm italic">
-                    Tidak ada jadwal tersedia.
+            @else
+                {{-- Bagian ini akan "naik" ke atas jika tidak ada jadwal --}}
+                <div class="flex flex-col items-center justify-center py-4 text-center">
+                    <div class="w-16 h-16 bg-gray-50 dark:bg-gray-800/50 rounded-full flex items-center justify-center mb-3">
+                        <i class="ri-calendar-close-line text-2xl text-gray-300"></i>
+                    </div>
+                    <p class="text-sm text-gray-400 italic">Tidak ada jadwal tersedia untuk kriteria ini.</p>
                 </div>
-            @endforelse
+            @endif
         </div>
     </div>
 </div>
@@ -167,15 +174,11 @@
         function initDatepicker(el, initialValue) {
             const inputEl = el.querySelector('#default-datepicker');
             const today = new Date();
-
-            // Hitung jarak ke hari Sabtu minggu ini
-            const dayOfWeek = today.getDay(); // 0 (Minggu) - 6 (Sabtu)
+            const dayOfWeek = today.getDay();
             const distanceToSaturday = 6 - dayOfWeek;
-
             const endOfWeek = new Date();
             endOfWeek.setDate(today.getDate() + distanceToSaturday);
 
-            // Inisialisasi Library
             const datepicker = new Datepicker(inputEl, {
                 autohide: true,
                 format: 'dd/mm/yyyy',
@@ -183,17 +186,14 @@
                 container: 'body',
                 minDate: today,
                 maxDate: endOfWeek,
-                daysOfWeekDisabled: [0], // Matikan hari Minggu
+                daysOfWeekDisabled: [0],
             });
 
-            // Set tanggal awal
             if (initialValue) {
                 datepicker.setDate(initialValue);
             }
 
-            // Kirim balik ke Livewire saat ganti tanggal
             inputEl.addEventListener('changeDate', (e) => {
-                // Menggunakan Livewire API secara langsung
                 @this.set('selectedDate', e.target.value);
             });
         }

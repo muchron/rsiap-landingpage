@@ -35,7 +35,7 @@
                 <div>
                     <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-green-500 w-fit">Akses Cepat</h2>
                     <ul class="text-gray-600 dark:text-gray-400 font-medium space-y-4">
-                        <li><a href="#" class="hover:text-green-600 transition">Tentang Kami</a></li>
+                        <li><a href="route('profile.tentang-kami')" class="hover:text-green-600 transition" wire:navigate>Tentang Kami</a></li>
                         <li><a href="#" class="hover:text-green-600 transition">Layanan Medis</a></li>
                         <li><a href="#" class="hover:text-green-600 transition">Jadwal Dokter</a></li>
                         <li><a href="#" class="hover:text-green-600 transition">Artikel Kesehatan</a></li>

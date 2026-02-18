@@ -23,17 +23,17 @@ class Layanan extends Component
             $response = $this->api->get('specialists');
             $layanan = $response->successful() ? $response->json()['data'] : [];
             $iconMap = [
+                'dokter-umum' => 'ri-stethoscope-line',
                 'kebidanan-dan-kandungan' => 'ri-parent-line',
                 'anestesi' => 'ri-capsule-fill',
                 'spesialis-anak' => 'ri-service-line',
                 'spesialis-bedah' => 'ri-knife-line',
                 'spesialis-penyakit-dalam' => 'ri-heart-pulse-line',
                 'patologi-klinik' => 'ri-microscope-line',
-                'dokter-umum' => 'ri-stethoscope-line',
                 'spesialis-radiologi' => 'ri-scan-line',
             ];
         } catch (\Exception $e) {
-            Log::error("Gagal mengambil data layanan: " . $e->getMessage());
+            Log::error("Gagal mengambil data layanan: ".$e->getMessage());
             $layanan = [];
         }
 

@@ -34,9 +34,10 @@
                 {{-- Title --}}
                 <h5 class="text-center text-sm md:text-lg 
                            font-bold uppercase tracking-tight 
-                           text-gray-900 dark:text-white">
+                           text-green-500 dark:text-white">
                     {{ $value['name'] }}
                 </h5>
+                {{-- <p class="text-xs text-gray-500 dark:text-gray-200 text-center">Instalasi Gawat Darurat (IGD) RS Siti Khodijah dilengkapi dengan tenaga medis yang handal serta peralatan medis yang siap selama 24 jam untuk menangani kasus gawat darurat.</p> --}}
 
             </a>
         @endforeach

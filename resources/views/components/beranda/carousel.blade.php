@@ -33,7 +33,7 @@
                             <a href="#layanan" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105 shadow-lg text-sm md:text-base">
                                 Lihat Layanan
                             </a>
-                            <a href="#tentang" class="px-6 py-3 border border-green-600 dark:border-white/30 rounded-xl dark:text-white text-green-600 font-semibold hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base">
+                            <a href="{{ route('profile.tentang-kami') }}" wire:navigate class="px-6 py-3 border border-green-600 dark:border-white/30 rounded-xl dark:text-white text-green-600 font-semibold hover:bg-white hover:text-black transition-all duration-300 text-sm md:text-base">
                                 Tentang Kami
                             </a>
                         </div>
@@ -47,7 +47,7 @@
         @foreach ($carousels as $index => $item)
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ $item['image'] }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 "
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 dark:brightness-[0.6] dark:contrast-[1.1]"
                     alt="Slide {{ $index + 2 }}">
                 {{-- <div class="absolute inset-0 bg-black/40"></div> --}}
 
