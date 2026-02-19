@@ -54,4 +54,24 @@ class Artikel extends Controller
             ->toArray();
     }
 
+    /**
+     * Helper untuk mengambil artikel berdasarkan slug kategori dari API
+     */
+    protected function getArticlesByCategory(string $slug)
+    {
+        // Asumsi endpoint API: articles?category=slug atau categories/$slug/articles
+        $response = $this->api->get("articles?category=$slug")->json();
+
+        return $response['data'] ?? [];
+    }
+
+    /**
+     * Helper untuk mengambil semua artikel
+     */
+    protected function allArticles()
+    {
+        $response = $this->api->get('articles')->json();
+        return $response['data'] ?? [];
+    }
+
 }

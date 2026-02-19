@@ -30,7 +30,7 @@
             {{-- CATEGORY TAG --}}
             <div class="flex flex-wrap gap-2 py-4">
                 @foreach ($categories as $category)
-                    <a href=""
+                    <a href="{{ route('artikel', ['category' => $category['slug']]) }}" wire:navigate
                         class="px-4 py-1 text-sm font-medium 
                               text-green-700 
                               bg-white/70 backdrop-blur

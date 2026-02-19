@@ -77,7 +77,7 @@
                 <div>
                     <a href="{{ route('artikel.read', $artikel['slug']) }}">
                         <img src="{{ $artikel['cover'] }}"
-                            class="w-full h-[200px] rounded-t-xl object-cover transition-transform duration-500 dark:brightness-[0.6] dark:contrast-[1.1]">
+                            class="w-full h-[200px] rounded-t-xl object-cover transition-transform duration-500">
                     </a>
                 </div>
 

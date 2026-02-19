@@ -19,18 +19,12 @@
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl mx-auto text-center">
-
-                {{-- Heading Utama --}}
-                <h1 class="flex flex-col gap-1 mb-8 tracking-tight">
-                    <span class="italic font-medium text-green-100 dark:text-green-300 leading-tight"
-                        style="font-family: 'Dancing Script', 'Cursive', sans-serif; font-size: clamp(2.2rem, 9vw, 4rem);">
-                        Sehat dan Bahagia
-                    </span>
-                    <span class="text-4xl md:text-7xl font-black text-white dark:text-gray-100 uppercase tracking-tighter leading-[0.85]">
-                        Bersama Kami
+                <h1 class="flex flex-col gap-1 mb-8"
+                    style="font-size: clamp(2.5rem, 20vw, 6rem);">
+                    <span class="text-2xl md:text-6xl font-black text-white dark:text-gray-100 font-corinthia">
+                        Assalamualaikum Wr. Wb.
                     </span>
                 </h1>
-
                 {{-- Deskripsi & Garis Dekorasi --}}
                 <div class="relative pt-8 max-w-xl mx-auto">
                     <div class="absolute left-1/2 -translate-x-1/2 top-0 w-16 h-[2px] bg-green-300/50 dark:bg-green-500/30"></div>
@@ -127,29 +121,49 @@
         </div>
     </section>
 
-    <section class="py-12 md:py-20 bg-gradient-to-br from-green-200 via-gree-400 to-emerald-700 overflow-hidden ">
+    <section class="py-12 md:py-20 bg-gradient-to-br from-green-200 via-gree-400 to-emerald-700 dark:from-green-900 dark:via-gray-900 dark:to-emerald-900 overflow-hidden ">
         <div class="container mx-auto px-4 md:px-6 max-w-screen-xl">
+
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-xs font-bold text-green-800 dark:text-green-400 uppercase tracking-[0.4em] mb-4">Moto Pelayanan</h2>
+                <div class="inline-flex flex-col items-center">
+                    <h1 class="flex flex-col mb-8 tracking-tight">
+                        {{-- Menggunakan leading-none dan margin bawah negatif sedikit untuk mendekatkan teks --}}
+                        <span class="italic font-medium text-green-900 dark:text-green-300 leading-none font-corinthia -mb-2 md:-mb-4"
+                            style="font-size: clamp(2.5rem, 20vw, 6rem);">
+                            Sehat dan Bahagia
+                        </span>
+
+                        {{-- Menghilangkan leading yang terlalu besar --}}
+                        <span class="text-4xl md:text-7xl font-black text-green-100 dark:text-gray-100 uppercase tracking-tighter leading-none">
+                            Bersama Kami
+                        </span>
+                    </h1>
+                    <div class="w-24 h-1 bg-white/30 mt-6 rounded-full"></div>
+                </div>
+            </div>
+
             <div class="flex flex-col gap-8 md:gap-10">
                 {{-- Visi --}}
                 <div class="relative group overflow-hidden bg-white dark:bg-gray-900 p-6 md:p-10 rounded-3xl shadow-xl shadow-green-900/5 border border-green-100 dark:border-gray-700">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-100 rounded-full blur-3xl opacity-50"></div>
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-100 dark:bg-gray-800 rounded-full blur-3xl opacity-50 dark:opacity-100"></div>
 
                     <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl md:rounded-3xl flex items-center justify-center text-white shadow-lg">
+                        <div class="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-emerald-600 dark:from-green-900 dark:to-emerald-900 rounded-2xl md:rounded-3xl flex items-center justify-center text-white shadow-lg dark:shadow-green-900/20">
                             <i class="ri-eye-line text-3xl md:text-4xl"></i>
                         </div>
                         <div>
                             <h3 class="text-[10px] md:text-xs font-bold text-green-600 uppercase tracking-[0.2em] mb-2">Visi Kami</h3>
                             <p class="text-xl md:text-3xl font-extrabold text-gray-800 dark:text-white leading-tight">
-                                Menjadi Rumah Sakit Khusus Ibu dan Anak dengan standar mutu pelayanan <span class="text-green-600">Islami</span>, memuaskan dan aman bagi pelanggan.
+                                Menjadi Rumah Sakit Khusus Ibu dan Anak dengan standar mutu pelayanan <span class="text-green-600 dark:text-green-400">Islami</span>, memuaskan dan aman bagi pelanggan.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 {{-- Misi - Perbaikan Radius & Padding Mobile --}}
-                <div class="relative overflow-hidden p-6 md:p-10 rounded-3xl shadow-2xl text-white"
-                    style="background: linear-gradient(145deg, #166534 0%, #065f46 50%, #064e3b 100%);">
+                <div class="relative overflow-hidden p-6 md:p-10 rounded-3xl shadow-2xl text-white dark:bg-gray-900 bg-gradient-to-br from-green-700 to-emerald-900 dark:from-slate-800 dark:to-gray-900"
+                    style="">
 
                     <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
 
@@ -169,8 +183,8 @@
                                     <i class="ri-heart-pulse-line text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base md:text-lg mb-1">Pelayanan Profesional</h4>
-                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Menyelenggarakan pelayanan kesehatan yang berkualitas dan sesuai standar medis.</p>
+                                    <h4 class="font-bold text-base md:text-lg mb-1 dark:text-green-500">Pelayanan Profesional</h4>
+                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Memberikan pelayanan kesehatan khusus ibu dan anak secara <span class="text-gray-100 dark:text-white font-bold">profesional dengan fasilitas yang lengkap, sumber daya manusia yang berkualitas, dan terakreditasi</span> </p>
                                 </div>
                             </div>
 
@@ -179,8 +193,8 @@
                                     <i class="ri-shake-hands-line text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base md:text-lg mb-1">Kemitraan Berkesinambungan</h4>
-                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Menjalin kerja sama yang baik dengan pasien dan mitra kerja lainnya secara berkelanjutan.</p>
+                                    <h4 class="font-bold text-base md:text-lg mb-1 dark:text-green-500">Kemitraan Berkesinambungan</h4>
+                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Membangun kemitraan dengan berbagai pihak sehingga <span class="text-gray-100 dark:text-white font-bold">terbentuk jaringan pelayanan kesehatan secara berkesinambungan</span> yang mendukung tercapainya program kesehatan ibu dan anak </p>
                                 </div>
                             </div>
 
@@ -189,8 +203,8 @@
                                     <i class="ri-instance-line text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base md:text-lg mb-1">Ibadah dan Dakwah</h4>
-                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Menjadikan seluruh aktivitas pelayanan sebagai bagian dari ibadah dan sarana dakwah sesuai nilai-nilai Islami.</p>
+                                    <h4 class="font-bold text-base md:text-lg mb-1 dark:text-green-500">Ibadah dan Dakwah</h4>
+                                    <p class="text-green-50/70 text-sm md:text-base leading-relaxed">Memberikan pelayanan kesehatan sebagai<span class="text-gray-100 dark:text-white font-bold"> ibadah dan dakwah kepada seluruh masyarakat.</span></p>
                                 </div>
                             </div>
                         </div>
@@ -238,14 +252,14 @@
                     <div class="relative flex flex-col md:flex-row items-center group">
                         <div class="flex-1 md:w-1/2 hidden md:block"></div>
                         {{-- Dot Center --}}
-                        <div class="relative z-10 flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full border-4 border-white dark:border-gray-900 shadow-xl mb-8 md:mb-0">
+                        <div class="relative z-10 flex items-center justify-center w-12 h-12 bg-slate-800 rounded-full border-4 border-white dark:border-gray-900 shadow-xl mb-8 md:mb-0">
                             <i class="ri-hospital-line text-white"></i>
                         </div>
                         <div class="flex-1 md:w-1/2 w-full md:pl-12 order-2">
-                            <div class="p-8 bg-green-600 rounded-3xl shadow-2xl shadow-green-900/20 text-white transition-all duration-500">
+                            <div class="p-8 bg-green-600 dark:bg-green-900 rounded-3xl shadow-2xl shadow-green-900/20 text-white transition-all duration-500">
                                 <span class="text-green-200 font-bold text-sm">Transformasi</span>
                                 <h4 class="text-xl font-bold mt-1 mb-3 text-white">Peningkatan Status Menjadi RSIA</h4>
-                                <p class="text-green-50/80 leading-relaxed text-sm">
+                                <p class="text-green-50/80 dark:text-green-50 leading-relaxed text-sm">
                                     Seiring meningkatnya kebutuhan masyarakat dan standar medis, institusi ini bertransformasi menjadi Rumah Sakit Ibu dan Anak (RSIA). Hal ini menandai penambahan fasilitas medis krusial seperti ruang operasi dan poliklinik spesialis yang lebih lengkap.
                                 </p>
                             </div>
@@ -278,10 +292,10 @@
                             <i class="ri-flask-line text-white"></i>
                         </div>
                         <div class="flex-1 md:w-1/2 w-full md:pl-12 order-2">
-                            <div class="p-8 bg-white dark:bg-gray-900 rounded-3xl border border-green-100 dark:border-gray-700 hover:shadow-2xl hover:shadow-green-900/5 transition-all duration-500">
-                                <span class="text-green-600 font-bold text-sm">Hari Ini</span>
-                                <h4 class="text-xl font-bold text-gray-900 dark:text-white mt-1 mb-3">Layanan Komprehensif</h4>
-                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+                            <div class="p-8 bg-green-600 dark:bg-green-900 rounded-3xl shadow-2xl shadow-green-900/20 text-white transition-all duration-500">
+                                <span class="text-green-200 font-bold text-sm">Hari Ini</span>
+                                <h4 class="text-xl font-bold mt-1 mb-3 text-white">Layanan Komprehensif</h4>
+                                <p class="text-green-50/80 dark:text-green-50 leading-relaxed text-sm">
                                     Memiliki fasilitas lengkap mulai dari IGD 24 Jam, poliklinik spesialis, hingga penunjang medis canggih seperti Laboratorium dan Radiologi untuk melayani dengan sepenuh hati. Seluruh aktivitas didedikasikan sebagai bagian dari ibadah dan dakwah Islami.
                                 </p>
                             </div>
@@ -289,6 +303,64 @@
                     </div>
 
                 </div>
+            </div>
+        </div>
+    </section>
+    {{-- SECTION: MAKSUD DAN TUJUAN --}}
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-950 relative overflow-hidden">
+        {{-- Background Decoration --}}
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-green-50/50 dark:bg-green-950/10 skew-x-12 transform translate-x-20"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-12 items-center">
+
+                {{-- Sisi Kiri: Judul --}}
+                <div class="lg:col-span-2">
+                    <div class="inline-block px-4 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-widest mb-4">
+                        Purpose
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight mb-6">
+                        Maksud & <br>
+                        <span class="text-green-600">Tujuan</span> Pendirian
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                        Landasan fundamental yang mendasari berdirinya RSIA Aisyiyah Pekajangan sebagai institusi kesehatan yang membawa misi kemanusiaan.
+                    </p>
+                </div>
+
+                {{-- Sisi Kanan: List --}}
+                <div class="lg:col-span-3 space-y-6">
+                    {{-- Item 1 --}}
+                    <div class="flex gap-6 p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white font-black text-xl">
+                            1
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                            Menjadi RSIA yang <span class="text-gray-900 dark:text-white font-bold">dikenal dan dipercaya</span> oleh masyarakat Pekalongan dan sekitarnya sebagai RS Khusus Ibu dan Anak dengan standar mutu sebagai prioritas utama.
+                        </p>
+                    </div>
+
+                    {{-- Item 2 --}}
+                    <div class="flex gap-6 p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white font-black text-xl">
+                            2
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                            Menjadi RSIA yang menerapkan <span class="text-gray-900 dark:text-white font-bold">nilai-nilai Islam</span> dalam tata kelola lingkungan dan pelayanan, serta mengutamakan prinsip <span class="italic text-green-600 dark:text-green-400">Rahmatan lil’alamin</span>.
+                        </p>
+                    </div>
+
+                    {{-- Item 3 --}}
+                    <div class="flex gap-6 p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white font-black text-xl">
+                            3
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                            Menjadi RSIA yang memberikan pelayanan sebagai <span class="text-gray-900 dark:text-white font-bold">ibadah dan dakwah</span> dengan tetap memperhatikan keseimbangan antara kesejahteraan dunia dan akhirat.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

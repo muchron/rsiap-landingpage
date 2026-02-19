@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <main class="container mx-auto w-full grid grid-cols-1 gap-8 md:grid-cols-2">
+    <main class="container mx-auto w-full grid grid-cols-1 gap-8 md:grid-cols-2 mt-8 md:mt-8">
 
         <x-artikel.carousel />
 
@@ -19,7 +19,7 @@
                             <li class="py-4 first:pt-0 last:pb-0">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
-                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm dark:brightness-[0.6] dark:contrast-[1.1]"
+                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm"
                                             src="{{ $item['cover'] }}"
                                             alt="{{ $item['title'] }}">
                                     </div>
