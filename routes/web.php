@@ -21,10 +21,15 @@ Route::get('/artikel/{slug}', [App\Http\Controllers\Pages\Artikel::class, 'get']
 
 Route::prefix('profile')->group(function () {
     Route::get('/tentang-kami', function () {
-        return view('pages.profile.tentang-kami');
+        return view('pages.profile.tentang-kami', [
+            'title' => ucfirst(request()->segment(1)) . ' - ' . 'Tentang Kami',
+        ]);
     })->name('profile.tentang-kami');
     Route::get('/struktur-organisasi', function () {
-        return view('errors.404');
+        return view(
+            'pages.profile.struktur-organisasi',
+            ['title' => ucfirst(request()->segment(1)) . ' - ' . 'Struktur Organisasi']
+        );
     })->name('profile.struktur-organisasi');
     Route::get('/akreditasi', function () {
         return view('errors.404');
