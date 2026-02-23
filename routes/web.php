@@ -32,7 +32,10 @@ Route::prefix('profile')->group(function () {
         );
     })->name('profile.struktur-organisasi');
     Route::get('/akreditasi', function () {
-        return view('errors.404');
+        return view(
+            'pages.profile.akreditasi',
+            ['title' => ucfirst(request()->segment(1)) . ' - ' . 'Akreditasi']
+        );
     })->name('profile.akreditasi');
 });
 

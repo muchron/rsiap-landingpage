@@ -46,10 +46,10 @@
     </section>
 
     {{-- 2. Section Tambahan: Visi & Informasi (Diletakkan di bawah gambar) --}}
-    <section class="py-20 bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
+    <section class="py-20 bg-green-100 dark:bg-gray-950 transition-colors duration-500">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div class="p-8 rounded-3xl bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md border border-gray-100 dark:border-gray-800 shadow-xl">
+                <div class="p-8 rounded-3xl bg-white dark:bg-gray-900/50 backdrop-blur-md border border-gray-100 dark:border-gray-800 shadow-xl">
                     <i class="ri-double-quotes-l text-4xl text-gray-300 mb-3 block"></i>
                     <p class="text-gray-700 dark:text-gray-300 italic leading-relaxed">
                         "Kepemimpinan di RSIA Aisyiyah Pekajangan adalah tentang amanah dan pelayanan. Kami bersinergi untuk memastikan setiap alur koordinasi bermuara pada satu tujuan utama: Keselamatan dan kepuasan pasien yang berlandaskan nilai-nilai Ihsan."
@@ -67,12 +67,18 @@
                         Struktur ini mencerminkan komitmen kami terhadap transparansi dan profesionalisme. Terbagi dalam dua pilar utama (Pelayanan & Penunjang serta Keuangan & SDI) untuk menjamin efektivitas operasional rumah sakit.
                     </p>
                     <div class="flex gap-2">
-                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-[10px] font-bold rounded-full uppercase">Akuntabel</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-[10px] font-bold rounded-full uppercase">Responsif</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full uppercase">Islami</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-[10px] font-bold rounded-full uppercase shadow-md">Akuntabel</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-[10px] font-bold rounded-full uppercase shadow-md">Responsif</span>
+                        <span class="px-3 py-1 bg-green-200 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold rounded-full uppercase shadow-md">Islami</span>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-500">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <img src="{{ asset('images/value-rsia-aisyiyah.png') }}" alt="" class="w-full h-auto rounded-3xl transition-transform duration-500 hover:scale-105 dark:brightness-110">
+
         </div>
     </section>
 @endsection
