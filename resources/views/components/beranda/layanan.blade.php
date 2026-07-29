@@ -361,8 +361,12 @@
             <!-- Image -->
             <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
 
-                <img src="{{ asset('images/mockup-rsiap-mobile.webp') }}" alt="RSIAP Mobile"
-                    class="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto object-contain drop-shadow-2xl">
+                <div class="overflow-hidden p-4">
+                    <img src="{{ asset('images/mockup-rsiap-mobile.webp') }}" alt="RSIAP Mobile" class="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto object-contain
+                           drop-shadow-2xl
+                           transition-all duration-700
+                           hover:scale-105 hover:-translate-y-2">
+                </div>
 
             </div>
 
@@ -382,11 +386,12 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
 
             <!-- Image -->
-            <div class="order-2 lg:order-1 flex justify-center">
+            <div class="order-2 lg:order-1 flex justify-center p-4">
 
-                <img src="{{ asset('images/mockup-mobile-jkn.png') }}" alt="Mobile JKN"
-                    class="w-full max-w-md drop-shadow-2xl">
-
+                <img src="{{ asset('images/mockup-mobile-jkn.png') }}" alt="RSIAP Mobile" class="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto object-contain
+                                               drop-shadow-2xl
+                                               transition-all duration-700
+                                               hover:scale-105 hover:-translate-y-2">
             </div>
 
             <!-- Content -->

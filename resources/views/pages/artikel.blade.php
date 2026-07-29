@@ -19,13 +19,13 @@
                             <li class="py-4 first:pt-0 last:pb-0">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
-                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm"
-                                            src="{{ $item['cover'] }}"
+                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm" src="{{ $item['cover'] }}"
                                             alt="{{ $item['title'] }}">
                                     </div>
 
                                     <div class="flex-1 min-w-0">
-                                        <p class="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
+                                        <p
+                                            class="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                                             {{ $item['category']['name'] }}
                                         </p>
 
@@ -37,7 +37,8 @@
 
                                         <div class="flex items-center gap-4 mt-1 text-xs text-gray-500 dark:text-gray-400">
                                             <span class="flex items-center gap-1">
-                                                <i class="ri-calendar-line"></i> 08 Januari 2025
+                                                <i class="ri-calendar-line"></i>
+                                                {{ Carbon\Carbon::parse($item['created_at'])->translatedFormat('d F Y') }}
                                             </span>
                                             <span class="flex items-center gap-1">
                                                 <i class="ri-user-line"></i> {{ $item['author'] }}
