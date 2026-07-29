@@ -4,7 +4,7 @@
     <section class="relative py-16 overflow-hidden bg-gray-50 dark:bg-gray-800">
         <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="absolute inset-0 bg-gray-50 dark:bg-gray-950 transition-colors duration-700"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-green-50/30 to-gray-200/50 dark:from-green-950/20 dark:via-transparent dark:to-slate-950/50 transition-opacity"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-white/50 via-blue-50/30 to-gray-200/50 dark:from-blue-950/20 dark:via-transparent dark:to-slate-950/50 transition-opacity"></div>
             <div class="absolute inset-0 opacity-10 dark:opacity-[0.15] pointer-events-none mix-blend-luminosity">
                 <img src="{{ asset('images/akreditasi/tim-akreditasi.JPG') }}"
                     class="w-full h-full object-cover object-center grayscale scale-105"
@@ -17,14 +17,14 @@
             <div class="absolute -top-32 -left-32 w-[400px] md:w-[800px] h-[400px] md:h-[800px] 
                 bg-yellow-400/20 dark:bg-yellow-500/10 rounded-full blur-[100px] md:blur-[150px] animate-pulse"></div>
             <div class="absolute -bottom-32 -right-32 w-[350px] md:w-[700px] h-[350px] md:h-[700px] 
-                bg-green-400/20 dark:bg-green-600/10 rounded-full blur-[100px] md:blur-[150px]"></div>
+                bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-[100px] md:blur-[150px]"></div>
             <div class="hidden dark:block absolute inset-0 bg-gradient-to-b from-transparent via-gray-950/20 to-gray-950"></div>
         </div>
 
         <div class="container relative z-10 mx-auto px-4 max-w-5xl">
             <div class="text-center mb-4">
                 <h1 class="flex flex-col mb-4 tracking-tight">
-                    <span class="font-corinthia text-green-700 dark:text-green-400 leading-none -mb-2 md:-mb-4" style="font-size: clamp(2.5rem, 8vw, 4rem);">
+                    <span class="font-corinthia text-blue-700 dark:text-blue-400 leading-none -mb-2 md:-mb-4" style="font-size: clamp(2.5rem, 8vw, 4rem);">
                         Mutu & Keselamatan
                     </span>
                     <span class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white uppercase tracking-tighter">
@@ -47,11 +47,11 @@
         </div>
     </section>
 
-    <section class="py-20 bg-green-50 dark:bg-gray-800">
+    <section class="py-20 bg-blue-50 dark:bg-gray-800">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="text-center mb-12">
                 <h1 class="flex flex-col mb-4 tracking-tight">
-                    <span class="font-corinthia text-green-700 dark:text-green-400 leading-none -mb-2 md:-mb-4" style="font-size: clamp(2.5rem, 8vw, 4rem);">
+                    <span class="font-corinthia text-blue-700 dark:text-blue-400 leading-none -mb-2 md:-mb-4" style="font-size: clamp(2.5rem, 8vw, 4rem);">
                         Khidmat Pelayanan
                     </span>
                     <span class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white uppercase tracking-tighter">
@@ -102,10 +102,10 @@
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-black uppercase tracking-widest">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest">
                         <i class="ri-shield-star-line"></i> Terakreditasi LARSI
                     </div>
-                    <h3 class="text-3xl font-black text-green-600 dark:text-green-400 uppercase leading-none ">
+                    <h3 class="text-3xl font-black text-blue-600 dark:text-blue-400 uppercase leading-none ">
                         Standar Tertinggi Untuk Keluarga Anda
                     </h3>
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
@@ -125,12 +125,12 @@
                 </div>
 
                 <div class="p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-xl relative overflow-hidden">
-                    <i class="ri-verified-badge-line absolute -bottom-8 -right-8 text-9xl text-green-200 rotate-12"></i>
+                    <i class="ri-verified-badge-line absolute -bottom-8 -right-8 text-9xl text-blue-200 rotate-12"></i>
                     <p class="relative z-10 text-gray-700 dark:text-gray-300 italic leading-relaxed text-sm">
                         "Akreditasi bukan sekadar simbol di dinding, melainkan budaya kerja yang mendarah daging di setiap tindakan medis kami. Ini adalah janji kami kepada setiap orang tua bahwa buah hati mereka berada di tangan yang tepat."
                     </p>
                     <div class="mt-6 flex items-center gap-4 relative z-10">
-                        <div class="h-px w-8 bg-green-600"></div>
+                        <div class="h-px w-8 bg-blue-600"></div>
                         <span class="text-[10px] font-bold uppercase tracking-widest text-gray-900 dark:text-white">Tim Akreditasi RSIA Aisyiyah Pekajangan</span>
                     </div>
                 </div>

@@ -40,6 +40,13 @@ return [
         'cons_id' => env('API_CONS_ID'),
         'key' => env('API_KEY'),
         'image' => env('API_IMAGE_URL'),
+        'external' => [
+            'base_url' => env('EXTERNAL_API_URL'),
+            'client_id' => env('EXTERNAL_API_CLIENT_ID'),
+            'client_secret' => env('EXTERNAL_API_CLIENT_SECRET'),
+            'username' => env('EXTERNAL_API_USERNAME'),
+            'password' => env('EXTERNAL_API_PASSWORD'),
+        ],
     ]
 
 ];

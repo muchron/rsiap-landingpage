@@ -1,6 +1,3 @@
-
-
-
 <section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
 
     {{-- Background Image --}}
@@ -16,7 +13,7 @@
 
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                 Selamat Datang di
-                <span class="text-green-400 block">
+                <span class="text-blue-400 block">
                     RSIA Aisyiyah Pekajangan
                 </span>
             </h1>
@@ -30,7 +27,7 @@
 
             <div class="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
                 <a href="#layanan"
-                    class="px-6 py-3 bg-green-600 hover:bg-green-700
+                    class="px-6 py-3 bg-blue-600 hover:bg-blue-700
                        rounded-lg text-white font-semibold
                        transition-all duration-300 hover:scale-105 shadow-lg">
                     Lihat Layanan

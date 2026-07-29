@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Layanan\RawatInap;
+use App\Http\Controllers\Layanan\RawatJalan;
 use App\Services\ApiService;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +39,25 @@ Route::prefix('profile')->group(function () {
             ['title' => ucfirst(request()->segment(1)) . ' - ' . 'Akreditasi']
         );
     })->name('profile.akreditasi');
+});
+
+Route::prefix('layanan')->group(function () {
+    Route::get('/', function () {
+        return view('pages.layanan.index', [
+            'title' => ucfirst(request()->segment(1)),
+        ]);
+    })->name('layanan');
+    Route::get('/rawat-jalan', [RawatJalan::class, 'index'])->name('layanan.rawat-jalan');
+
+    Route::get('/rawat-inap', [RawatInap::class, 'index'])->name('layanan.rawat-inap');
+
+
+    Route::get('/ugd', function () {
+return view('errors.404');
+    })->name('layanan.ugd');
+    Route::get('/poliklinik', function () {
+        return view('errors.404');
+    })->name('layanan.poliklinik');
 });
 
 Route::get('/test', function (ApiService $api) {

@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="input-group mt-7">
-        <button class="bg-green-600 w-full hover:bg-green-900 text-white font-bold py-2 px-4 rounded" type="button"><i class="ri-search-line"></i> Cari</button>
+        <button class="bg-blue-600 w-full hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" type="button"><i class="ri-search-line"></i> Cari</button>
     </div>
 
 </form>

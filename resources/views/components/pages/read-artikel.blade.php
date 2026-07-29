@@ -52,13 +52,38 @@
         .dark .article-content p {
             color: #d0d0d0 !important;
         }
+
+        /* buatkan untuk styling font header */
+        .article-content h1 {
+            font-size: 1.875rem !important;
+            line-height: 2.5rem !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem !important;
+            line-height: 2.25rem !important;
+            font-weight: 600 !important;
+            /* create upper case */
+            text-transform: uppercase !important;
+
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem !important;
+            line-height: 2rem !important;
+            /* buat bold */
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+        }
     </style>
 @endpush
 @section('content')
     <div class="container mx-auto w-full md:p-0 px-10 md:mt-4 mt-4">
         <div class="col-span-3">
             <div id="info_artikel">
-                <h1 class="text-3xl font-extrabold text-green-600 dark:text-green-400">{{ $artikel['title'] }}</h1>
+                <h1 class="text-3xl font-extrabold text-blue-600 dark:text-blue-400">{{ $artikel['title'] }}</h1>
 
             </div>
             <div class="container mx-auto w-full md:p-0 px-0 md:mt-5 mt-5">
@@ -71,7 +96,8 @@
                         <i class="ri-user-line"></i> {{ $artikel['author'] }}
                     </span>
                 </div>
-                <img class="w-full object-cover aspect-[21/9] rounded-lg dark:brightness-[0.6] dark:contrast-[1.1]" src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
+                <img class="w-full object-cover aspect-[21/9] rounded-lg dark:brightness-[0.6] dark:contrast-[1.1]"
+                    src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
             </div>
             <div class="article-content mt-6 text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
                 <p class="text-justify">{!! $artikel['body'] !!}</p>
@@ -85,10 +111,12 @@
 
         </div>
         {{-- <div class="col-span-1">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit minima voluptas maxime nobis!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat
+                repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit
+                minima voluptas maxime nobis!</p>
         </div> --}}
     </div>
-    <div class="bg-green-100 h-full w-full md:p-10 px-5 py-5 md:mt-10 mt-5 dark:bg-gray-800">
+    <div class="bg-blue-100 h-full w-full md:p-10 px-5 py-5 md:mt-10 mt-5 dark:bg-gray-800">
 
         <div class="container mx-auto w-full">
             <div class="flex items-center justify-between mb-6">

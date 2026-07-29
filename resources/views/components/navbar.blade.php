@@ -2,23 +2,23 @@
     @scroll.window="atTop = (window.pageYOffset > 50 ? false : true)">
 
     <div :class="{ 'h-0 opacity-0 overflow-hidden': !atTop, 'h-12 opacity-100': atTop }"
-        class="transition-all duration-500 bg-gradient-to-r from-green-600 to-green-800 text-white flex items-center px-4 md:px-10 overflow-hidden">
+        class="transition-all duration-500 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 text-white flex items-center px-4 md:px-10 overflow-hidden">
 
         <div class="flex items-center justify-between w-full max-w-screen-xl mx-auto">
 
             <div class="flex items-center gap-2 md:gap-4">
                 {{-- Tombol IGD --}}
                 <a href="tel:0285123456"
-                    class="flex text-[10px] md:text-sm lg:text-xs items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-sm">
+                    class="cursor-pointer flex text-[10px] md:text-sm lg:text-xs items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-sm">
                     <i class="ri-phone-fill"></i>
                     <span class="tracking-wide">IGD: <span class="font-bold">(0285) 785909</span> | <i class="ri-clock-line"></i> 24 Jam</span>
                 </a>
 
                 {{-- Informasi & Pendaftaran --}}
-                <div class="hidden text-[10px] md:text-sm lg:text-xs sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-all cursor-default border border-white/10">
-                    <i class="ri-information-line text-green-300"></i>
-                    <span class="font-medium">Pendaftaran: 0856-4000-9934</span>
-                </div>
+                <a href="https://wa.me/6285640009934" class="cursor-pointer hidden text-[10px] md:text-sm lg:text-xs sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-600 hover:bg-green-900/80 transition-all cursor-default border border-white/10">
+                    <i class="ri-information-line text-white-300"></i>
+                    Pendaftaran: <span class="font-extrabold">0856-4000-9934</span>
+                </a>
             </div>
 
             <div class="flex items-center gap-2 md:gap-3 ">
@@ -96,9 +96,21 @@
                         </x-navbar.dropdown>
                     </li>
                     <li>
-                        <x-navbar.nav-link :href="route('layanan')">
-                            <i class="ri-heart-2-line me-2"></i>Layanan</a>
-                        </x-navbar.nav-link>
+                        <x-navbar.dropdown>
+                            <x-slot name="trigger">
+                                <i class="ri-heart-2-line me-2"></i>
+                                Layanan
+                            </x-slot>
+                            <x-navbar.dropdown-link :href="route('layanan.rawat-inap')">
+                                Rawat Inap
+                            </x-navbar.dropdown-link>
+                            <x-navbar.dropdown-link :href="route('layanan.rawat-jalan')">
+                                Rawat Jalan
+                            </x-navbar.dropdown-link>
+                            {{-- <x-navbar.dropdown-link :href="route('layanan.poliklinik')">
+                                Poliklinik
+                            </x-navbar.dropdown-link> --}}
+                        </x-navbar.dropdown>
                     </li>
                     <li>
                         <x-navbar.nav-link :href="route('artikel')">
@@ -129,8 +141,8 @@
 
             links.forEach(link => {
                 if (link.href === currentURL) {
-                    link.classList.remove('text-gray-900', 'hover:bg-gray-100', 'md:hover:bg-transparent', 'md:hover:text-green-700', 'dark:hover:bg-gray-700', 'dark:hover:text-white', 'md:dark:hover:bg-transparent', 'dark:border-gray-700', 'dark:text-white', 'md:dark:text-white');
-                    link.classList.add('text-white', 'bg-green-700', 'md:bg-transparent', 'md:dark:text-green-500', 'md:text-green-700', 'dark:text-green-500', 'dark:bg-green-700', 'md:dark:bg-transparent', 'rounded-2xl');
+                    link.classList.remove('text-gray-900', 'hover:bg-gray-100', 'md:hover:bg-transparent', 'md:hover:text-blue-700', 'dark:hover:bg-gray-700', 'dark:hover:text-white', 'md:dark:hover:bg-transparent', 'dark:border-gray-700', 'dark:text-white', 'md:dark:text-white');
+                    link.classList.add('text-white', 'bg-blue-700', 'md:bg-transparent', 'md:dark:text-blue-500', 'md:text-blue-700', 'dark:text-blue-500', 'dark:bg-blue-700', 'md:dark:bg-transparent', 'rounded-2xl');
                 }
             })
 

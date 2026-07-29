@@ -7,7 +7,7 @@
         {{-- Di mobile, kita pakai click. Di desktop, hover sudah ditangani mouseenter --}}
         @click="open = !open"
         @click.outside="open = false"
-        class="flex items-center justify-between w-full md:w-auto gap-2 py-2 px-2 text-gray-700 dark:text-gray-200 hover:text-green-600 transition outline-none">
+        class="flex items-center justify-between w-full md:w-auto gap-2 py-2 px-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 transition outline-none">
         <span class="flex items-center gap-2">{{ $trigger }}</span>
         <i class="ri-arrow-down-s-line transition-transform duration-300" :class="{ 'rotate-180': open }"></i>
     </button>

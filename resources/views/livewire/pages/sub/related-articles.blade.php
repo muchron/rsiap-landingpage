@@ -12,7 +12,7 @@
             </div>
 
             <div class="w-2/3 p-4 flex flex-col justify-between">
-                <h3 class="text-sm md:text-base font-bold text-green-700 dark:text-green-400 line-clamp-2 leading-tight hover:text-green-800 dark:hover:text-green-400">
+                <h3 class="text-sm md:text-base font-bold text-blue-700 dark:text-blue-400 line-clamp-2 leading-tight hover:text-blue-800 dark:hover:text-blue-400">
                     <a href="{{ route('artikel.read', $item['slug']) }}" wire:navigate>{{ $item['title'] }}</a>
                 </h3>
 

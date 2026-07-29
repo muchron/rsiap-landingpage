@@ -1,14 +1,14 @@
 <section class="py-16 px-6 lg:px-20 
                 bg-gradient-to-r 
-                from-green-50 via-green-100 to-green-200
+                from-blue-50 via-blue-100 to-blue-200
                 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
 
     <div class="lg:max-w-screen-2xl xl:max-w-screen-3xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div class="lg:col-span-3">
 
             <h2 class="text-4xl font-bold 
-                       text-green-700 
-                       dark:text-green-400 mb-4">
+                       text-blue-700 
+                       dark:text-blue-400 mb-4">
                 Berita & Artikel
             </h2>
 
@@ -21,7 +21,7 @@
 
             <a href="#"
                 class="inline-flex items-center font-semibold 
-                      text-green-700 dark:text-green-400 
+                      text-blue-700 dark:text-blue-400 
                       hover:underline">
                 Lihat Semua Artikel
                 <span class="ms-2">→</span>
@@ -32,16 +32,16 @@
                 @foreach ($categories as $category)
                     <a href="{{ route('artikel', ['category' => $category['slug']]) }}" wire:navigate
                         class="px-4 py-1 text-sm font-medium 
-                              text-green-700 
+                              text-blue-700 
                               bg-white/70 backdrop-blur
-                              border border-green-200 
+                              border border-blue-200 
                               rounded-lg
-                              hover:bg-green-600 hover:text-white
+                              hover:bg-blue-600 hover:text-white
                               transition-colors duration-200
                               dark:bg-gray-800 
-                              dark:text-green-300 
+                              dark:text-blue-300 
                               dark:border-gray-700 
-                              dark:hover:bg-green-500 
+                              dark:hover:bg-blue-500 
                               dark:hover:text-white">
                         {{ $category['name'] }}
                     </a>
@@ -85,9 +85,9 @@
                                 <a href="{{ route('artikel.read', ['slug' => $article['slug']]) }}">
                                     <h5 class="mb-3 text-xl font-bold 
                                                text-gray-900 
-                                               hover:text-green-600
+                                               hover:text-blue-600
                                                dark:text-white 
-                                               dark:hover:text-green-400
+                                               dark:hover:text-blue-400
                                                line-clamp-2 transition-colors">
                                         {{ $article['title'] }}
                                     </h5>
@@ -103,10 +103,10 @@
                                         class="inline-flex items-center justify-between 
                                               w-full sm:w-auto px-5 py-2.5 
                                               text-sm font-semibold text-white 
-                                              bg-green-600 rounded-lg 
-                                              hover:bg-green-700
-                                              dark:bg-green-500 
-                                              dark:hover:bg-green-400
+                                              bg-blue-600 rounded-lg 
+                                              hover:bg-blue-700
+                                              dark:bg-blue-500 
+                                              dark:hover:bg-blue-400
                                               transition-colors">
                                         Baca Selengkapnya
                                         <svg class="w-3.5 h-3.5 ms-2" fill="none"

@@ -19,16 +19,18 @@ export default {
                 gray: colors.gray,
                 blue: colors.sky,
                 red: colors.rose,
+                yellow : colors.amber,
                 pink: colors.fuchsia,
             },
             fontFamily: {
-                sans: ['Graphik', ...defaultTheme.fontFamily.sans],
+                sans: ['Graphik', ...defaultTheme.fontFamily.sans],     
                 serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
             },
             spacing: {
                 '1': '0.5rem',
                 '128': '32rem',
                 '144': '36rem',
+                
             },
             borderRadius: {
                 '4xl': '2rem',

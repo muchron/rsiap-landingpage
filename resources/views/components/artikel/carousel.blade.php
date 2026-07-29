@@ -14,13 +14,13 @@
                         <div class="text-center md:text-left text-white pb-16 w-full px-6 md:px-12">
                             <div class="max-w-3xl">
                                 {{-- Badge Kategori (Opsional) --}}
-                                <span class="bg-green-500 text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded mb-3 inline-block">
+                                <span class="bg-blue-500 text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded mb-3 inline-block">
                                     Artikel Kesehatan
                                 </span>
 
                                 {{-- Judul --}}
                                 <a href="{{ route('artikel.read', $article['slug']) }}"
-                                    class="block text-2xl md:text-4xl font-extrabold mb-3 hover:text-green-400 transition-colors duration-300 leading-tight">
+                                    class="block text-2xl md:text-4xl font-extrabold mb-3 hover:text-blue-400 transition-colors duration-300 leading-tight">
                                     {{ $article['title'] }}
                                 </a>
 

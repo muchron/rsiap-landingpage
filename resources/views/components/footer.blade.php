@@ -21,11 +21,11 @@
                 </p>
                 <div class="space-y-3">
                     <div class="flex items-start gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                        <i class="ri-map-pin-2-fill text-green-600 text-lg"></i>
+                        <i class="ri-map-pin-2-fill text-blue-600 text-lg"></i>
                         <span>Jl. Raya Pekajangan No. 610, Pekalongan, Jawa Tengah 51172</span>
                     </div>
                     <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm">
-                        <i class="ri-phone-fill text-green-600 text-lg"></i>
+                        <i class="ri-phone-fill text-blue-600 text-lg"></i>
                         <span>(0285) 785909 / 0812-3456-7890</span>
                     </div>
                 </div>
@@ -33,40 +33,40 @@
 
             <div class="grid grid-cols-2 gap-8 sm:gap-12 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-green-500 w-fit">Akses Cepat</h2>
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-blue-500 w-fit">Akses Cepat</h2>
                     <ul class="text-gray-600 dark:text-gray-400 font-medium space-y-4">
-                        <li><a href="route('profile.tentang-kami')" class="hover:text-green-600 transition" wire:navigate>Tentang Kami</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Layanan Medis</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Jadwal Dokter</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Artikel Kesehatan</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Karir</a></li>
+                        <li><a href="route('profile.tentang-kami')" class="hover:text-blue-600 transition" wire:navigate>Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Layanan Medis</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Jadwal Dokter</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Artikel Kesehatan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Karir</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-green-500 w-fit">Layanan Kami</h2>
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-blue-500 w-fit">Layanan Kami</h2>
                     <ul class="text-gray-600 dark:text-gray-400 font-medium space-y-4">
-                        <li><a href="#" class="hover:text-green-600 transition">Poli Anak</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Poli Kandungan</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Persalinan</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">IGD 24 Jam</a></li>
-                        <li><a href="#" class="hover:text-green-600 transition">Laboratorium</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Poli Anak</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Poli Kandungan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Persalinan</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">IGD 24 Jam</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Laboratorium</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-green-500 w-fit">Ikuti Kami</h2>
+                    <h2 class="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white border-b-2 border-blue-500 w-fit">Ikuti Kami</h2>
                     <div class="flex gap-4 mb-6">
-                        <a href="#" class="text-gray-500 hover:text-green-600 dark:hover:text-white transition text-xl">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 dark:hover:text-white transition text-xl">
                             <i class="ri-instagram-line"></i>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-green-600 dark:hover:text-white transition text-xl">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 dark:hover:text-white transition text-xl">
                             <i class="ri-facebook-box-line"></i>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-green-600 dark:hover:text-white transition text-xl">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 dark:hover:text-white transition text-xl">
                             <i class="ri-whatsapp-line"></i>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-green-600 dark:hover:text-white transition text-xl">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 dark:hover:text-white transition text-xl">
                             <i class="ri-youtube-line"></i>
                         </a>
                     </div>
@@ -80,7 +80,7 @@
 
         <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                © {{ date('Y') }} <a href="/" class="hover:underline font-semibold text-green-700">RSIA Aisyiyah Pekajangan</a>. All Rights Reserved.
+                © {{ date('Y') }} <a href="/" class="hover:underline font-semibold text-blue-700">RSIA Aisyiyah Pekajangan</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0 text-xs text-gray-400">
                 <a href="#" class="hover:text-gray-900 dark:hover:text-white text-xs">Syarat & Ketentuan</a>

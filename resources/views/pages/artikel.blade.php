@@ -13,8 +13,8 @@
                     </h5>
                 </div>
 
-                <div class="bg-green-100 dark:bg-gray-800 p-5 rounded-xl">
-                    <ul role="list" class="divide-y divide-green-200 dark:divide-gray-700">
+                <div class="bg-blue-100 dark:bg-gray-800 p-5 rounded-xl">
+                    <ul role="list" class="divide-y divide-blue-200 dark:divide-gray-700">
                         @forelse ($newArticles as $item)
                             <li class="py-4 first:pt-0 last:pb-0">
                                 <div class="flex items-center space-x-4">
@@ -25,12 +25,12 @@
                                     </div>
 
                                     <div class="flex-1 min-w-0">
-                                        <p class="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wider">
+                                        <p class="text-xs font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                                             {{ $item['category']['name'] }}
                                         </p>
 
                                         <a href="{{ route('artikel.read', $item['slug']) }}"
-                                            class="block text-lg font-bold text-gray-800 dark:text-white hover:text-green-600 transition-colors duration-200 leading-tight"
+                                            class="block text-lg font-bold text-gray-800 dark:text-white hover:text-blue-600 transition-colors duration-200 leading-tight"
                                             wire:navigate>
                                             {{ $item['title'] }}
                                         </a>

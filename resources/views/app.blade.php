@@ -30,6 +30,55 @@
         {{ $title ?? (request()->segment(1) ? ucwords(str_replace('-', ' ', request()->segment(1))) . ' | RSIA Aisyiyah Pekajangan' : 'RSIA Aisyiyah Pekajangan') }}
     </title>
 
+    <style>
+        /* Mengatur warna dan tinggi loading bar */
+        .livewire-progress-bar {
+            background-color: #16a34a !important;
+            /* Warna hijau RSIA */
+            height: 10px !important;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-page {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .nprogress-bar {
+            background: #16a34a !important;
+            /* Hijau RSIA */
+            height: 4px !important;
+            z-index: 9999 !important;
+        }
+
+        .nprogress-spinner {
+            display: block !important;
+            z-index: 9999 !important;
+        }
+        @layer base {
+  body {
+    @apply transition-colors duration-500 ease-in-out;
+  }
+  
+  /* Menargetkan semua elemen agar transisi warna berjalan mulus */
+  *, ::before, ::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+}
+    </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -99,17 +148,26 @@
     <header class="fixed top-0 w-full z-50"> @include('components.navbar')
     </header>
 
-    <main class="flex-grow pt-16 lg:pt-20 lg:mt-12">
+    <main class="flex-grow pt-16 lg:pt-20 lg:mt-12 animate-page">
         @yield('content')
     </main>
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+        <a href="https://wa.me/6285640009934" target="_blank"
+            class="w-14 h-14 bg-[#25D366] text-white rounded-2xl shadow-sm shadow-green-200 dark:shadow-none flex items-center justify-center hover:scale-110 hover:-rotate-6 transition-all duration-300 group">
+            <i class="ri-whatsapp-line text-3xl transition-transform group-hover:scale-110"></i>
+    
+            <span
+                class="absolute right-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-white text-xs font-bold px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-100 dark:border-gray-700">
+                Chat WhatsApp
+            </span>
+        </a>
+
+    </div>
 
     <footer class="bg-white dark:bg-gray-900 mt-auto"> @include('components.footer')
     </footer>
-
-
     @stack('scripts')
     <script>
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -119,7 +177,6 @@
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Change the icons inside the button based on previous settings
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIcon.classList.remove('hidden');
         } else {
@@ -130,11 +187,9 @@
 
         themeToggleBtn.addEventListener('click', function() {
 
-            // toggle icons inside button
             themeToggleDarkIcon.classList.toggle('hidden');
             themeToggleLightIcon.classList.toggle('hidden');
 
-            // if set via local storage previously
             if (localStorage.getItem('color-theme')) {
                 if (localStorage.getItem('color-theme') === 'light') {
                     document.documentElement.classList.add('dark');
@@ -143,8 +198,6 @@
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
                 }
-
-                // if NOT set via local storage previously
             } else {
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
@@ -156,14 +209,13 @@
             }
 
         });
+        document.addEventListener('livewire:navigated', () => {
+            console.log(document.querySelector('#nprogress .nprogress-bar'));
 
-        document.addEventListener('scroll', (evt) => {
-            // if (window.scrollY > 0) {
-            //     document.getElementById('navbar').classList.add('sticky');
-            // } else {
-            //     document.getElementById('navbar').classList.remove('sticky');
-            // }
-        })
+            if (typeof initCarousels === 'function') {
+                initCarousels();
+            }
+        });
     </script>
     @livewireScripts
 </body>
