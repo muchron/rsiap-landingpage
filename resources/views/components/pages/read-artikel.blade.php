@@ -79,6 +79,11 @@
         }
     </style>
 @endpush
+
+@section('meta_desc', Carbon\Carbon::parse($artikel['created_at'])->translatedFormat('d F Y') . " | " . Str::limit(strip_tags($artikel['body']), 200))
+@section('meta_title', "Artikel & Berita RSIA Aisyiyah Pekajangan | " . $artikel['title'])
+@section('meta_image', $artikel['cover'])
+
 @section('content')
     <div class="container mx-auto px-6 lg:px-10 py-8">
 
@@ -114,7 +119,7 @@
 
                 </div>
 
-                <div class="article-content mt-8 text-justify [&>ul]:list-disc [&>ul]:ml-6 [&>ul]:mb-4">
+                <div class="article-content mt-8 lg:text-justify [&>ul]:list-disc [&>ul]:ml-6 [&>ul]:mb-4">
 
                     {!! $artikel['body'] !!}
 

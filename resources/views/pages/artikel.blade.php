@@ -1,5 +1,8 @@
 @extends('app')
 
+@section('meta_desc', 'Artikel kesehatan, Informasi Layanan & Berita RSIA Aisyiyah Pekajangan ')
+@section('meta_title', 'Artikel & Berita')
+
 @section('content')
     <main class="container mx-auto w-full grid grid-cols-1 gap-8 md:grid-cols-2 mt-8 md:mt-8">
 

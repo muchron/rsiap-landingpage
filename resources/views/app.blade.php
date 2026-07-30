@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="RSIA Aisyiyah Pekajangan menyediakan layanan kesehatan unggulan untuk ibu dan anak. Daftar periksa dokter lebih mudah & cepat melalui aplikasi RSIAP Mobile.">
-    <meta name="keywords" content="RSIA Aisyiyah Pekajangan, Rumah Sakit Ibu dan Anak, Jadwal Dokter RSIA, RSIAP Mobile, Rumah Sakit Pekalongan">
+    <meta name="description"
+        content="RSIA Aisyiyah Pekajangan menyediakan layanan kesehatan unggulan untuk ibu dan anak. Daftar periksa dokter lebih mudah & cepat melalui aplikasi RSIAP Mobile.">
+    <meta name="keywords"
+        content="RSIA Aisyiyah Pekajangan, Rumah Sakit Ibu dan Anak, Jadwal Dokter RSIA, RSIAP Mobile, Rumah Sakit Pekalongan">
     <meta name="author" content="RSIA Aisyiyah Pekajangan">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('meta_title', 'RSIA Aisyiyah Pekajangan')">
+    <meta property="og:description"
+        content="@yield('meta_desc', 'RSIA Aisyiyah Pekajangan menyediakan layanan kesehatan unggulan untuk ibu dan anak. Daftar periksa dokter lebih mudah & cepat melalui aplikasi RSIAP Mobile.')">
+    <meta property="og:image" content="@yield('meta_image', asset('images/logo-rsia-aisyiyah.png'))">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="RSIA Aisyiyah Pekajangan - Mudah & Cepat dengan RSIAP Mobile">
-    <meta property="og:description" content="Dapatkan kemudahan layanan kesehatan ibu dan anak dalam satu genggaman. Cek jadwal dan buat janji dokter sekarang.">
-    <meta property="og:image" content="{{ asset('images/og-image-rsia.jpg') }}">
+    <meta property="og:type" content="website">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
@@ -65,23 +68,28 @@
             display: block !important;
             z-index: 9999 !important;
         }
+
         @layer base {
-  body {
-    @apply transition-colors duration-500 ease-in-out;
-  }
-  
-  /* Menargetkan semua elemen agar transisi warna berjalan mulus */
-  *, ::before, ::after {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 500ms;
-  }
-}
+            body {
+                @apply transition-colors duration-500 ease-in-out;
+            }
+
+            /* Menargetkan semua elemen agar transisi warna berjalan mulus */
+            *,
+            ::before,
+            ::after {
+                transition-property: background-color, border-color, color, fill, stroke;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 500ms;
+            }
+        }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">
@@ -155,7 +163,7 @@
         <a href="https://wa.me/6285640009934" target="_blank"
             class="w-14 h-14 bg-[#25D366] text-white rounded-2xl shadow-sm shadow-green-200 dark:shadow-none flex items-center justify-center hover:scale-110 hover:-rotate-6 transition-all duration-300 group">
             <i class="ri-whatsapp-line text-3xl transition-transform group-hover:scale-110"></i>
-    
+
             <span
                 class="absolute right-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-white text-xs font-bold px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gray-100 dark:border-gray-700">
                 Chat WhatsApp
@@ -185,7 +193,7 @@
 
         var themeToggleBtn = document.getElementById('theme-toggle');
 
-        themeToggleBtn.addEventListener('click', function() {
+        themeToggleBtn.addEventListener('click', function () {
 
             themeToggleDarkIcon.classList.toggle('hidden');
             themeToggleLightIcon.classList.toggle('hidden');
