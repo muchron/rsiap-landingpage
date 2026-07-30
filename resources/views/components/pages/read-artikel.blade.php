@@ -27,7 +27,7 @@
         }
 
         .article-content a {
-            color: #22c55e !important;
+            color: #227cc5 !important;
         }
 
         /* darkmoode styling */
@@ -37,7 +37,7 @@
         }
 
         .dark .article-content a {
-            color: #4ade80 !important;
+            color: #49a9f8 !important;
         }
 
         .dark .article-content h1,
@@ -80,41 +80,76 @@
     </style>
 @endpush
 @section('content')
-    <div class="container mx-auto w-full md:p-0 px-10 md:mt-4 mt-4">
-        <div class="col-span-3">
-            <div id="info_artikel">
-                <h1 class="text-3xl font-extrabold text-blue-600 dark:text-blue-400">{{ $artikel['title'] }}</h1>
+    <div class="container mx-auto px-6 lg:px-10 py-8">
 
-            </div>
-            <div class="container mx-auto w-full md:p-0 px-0 md:mt-5 mt-5">
-                <div class="text-sm text-gray-400 dark:text-gray-500 flex justify-between mb-2">
-                    <span>
-                        <i class="ri-calendar-line"></i> {{ Carbon\Carbon::parse($artikel['created_at'])->format('d F Y') }}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-                    </span>
-                    <span>
-                        <i class="ri-user-line"></i> {{ $artikel['author'] }}
-                    </span>
+            <!-- ================= Artikel ================= -->
+            <article class="lg:col-span-8">
+
+                <div id="info_artikel">
+                    <h1 class="text-3xl font-extrabold text-blue-600 dark:text-blue-400">
+                        {{ $artikel['title'] }}
+                    </h1>
                 </div>
-                <img class="w-full object-cover aspect-[21/9] rounded-lg dark:brightness-[0.6] dark:contrast-[1.1]"
-                    src="{{ $artikel['cover'] }}" alt="Gambar {{ $artikel['title'] }}">
-            </div>
-            <div class="article-content mt-6 text-justify [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4">
-                <p class="text-justify">{!! $artikel['body'] !!}</p>
 
-            </div>
-            <x-badge>
-                @foreach ($artikel['labels'] as $label => $value)
-                    <x-badge-link size="small">{{ $value['name'] }}</x-badge-link>
-                @endforeach
-            </x-badge>
+                <div class="mt-5">
+
+                    <div class="flex justify-between text-sm text-gray-500 mb-3">
+
+                        <span>
+                            <i class="ri-calendar-line"></i>
+                            {{ Carbon\Carbon::parse($artikel['created_at'])->format('d F Y') }}
+                        </span>
+
+                        <span>
+                            <i class="ri-user-line"></i>
+                            {{ $artikel['author'] }}
+                        </span>
+
+                    </div>
+
+                    <img src="{{ $artikel['cover'] }}" alt="{{ $artikel['title'] }}"
+                        class="w-full aspect-[21/9] object-cover rounded-xl shadow-lg">
+
+                </div>
+
+                <div class="article-content mt-8 text-justify [&>ul]:list-disc [&>ul]:ml-6 [&>ul]:mb-4">
+
+                    {!! $artikel['body'] !!}
+
+                </div>
+
+                <div class="mt-8">
+                    <x-badge>
+                        @foreach ($artikel['labels'] as $label => $value)
+                            <x-badge-link size="small">
+                                {{ $value['name'] }}
+                            </x-badge-link>
+                        @endforeach
+                    </x-badge>
+                </div>
+
+            </article>
+
+            <!-- ================= Sidebar ================= -->
+            <aside class="hidden lg:block lg:col-span-4">
+
+                <div class="sticky top-24 space-y-6">
+                    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-c0d47815-747a-4f34-94b6-83fe2e50e85b" data-elfsight-app-lazy></div>
+                    <!-- Banner 1 -->
+                    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-b7215d4f-64b7-4f67-9154-50e8af9ea560" data-elfsight-app-lazy></div>
+
+                </div>
+
+            </aside>
 
         </div>
-        {{-- <div class="col-span-1">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam quae voluptates fugiat
-                repellendus! Tempora cum sed deserunt amet! Laborum alias saepe corrupti facilis suscipit reprehenderit
-                minima voluptas maxime nobis!</p>
-        </div> --}}
+
     </div>
     <div class="bg-blue-100 h-full w-full md:p-10 px-5 py-5 md:mt-10 mt-5 dark:bg-gray-800">
 
