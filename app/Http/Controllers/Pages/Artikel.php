@@ -30,6 +30,8 @@ class Artikel extends Controller
 
         return view('components.pages.read-artikel', [
             'artikel' => $data,
+            'category' => $data['category'],
+            'categories' => $this->category(),
             'title' => $data['title'] ?? 'RSIA Aisyiyah Pekajangan',
         ]);
     }

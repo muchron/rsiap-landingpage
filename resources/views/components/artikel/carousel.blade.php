@@ -1,6 +1,6 @@
 <div class="box mt-2 mb-10">
     <div id="indicators-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="5000">
-        <div class="relative h-64 overflow-hidden rounded-2xl md:h-[28rem] shadow-2xl">
+        <div class="relative h-64 overflow-hidden lg:rounded-2xl md:h-[28rem] shadow-2xl">
             @foreach ($articles as $index => $article)
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item="{{ $loop->first ? 'active' : '' }}">
 
@@ -22,13 +22,13 @@
 
                                 {{-- Judul --}}
                                 <a href="{{ route('artikel.read', $article['slug']) }}"
-                                    class="block text-2xl md:text-4xl font-extrabold mb-3 hover:text-blue-400 transition-colors duration-300 leading-tight">
+                                    class="block lg:text-2xl text-base md:text-4xl font-bold lg:font-extrabold lg:mb-3 mb-0 hover:text-blue-400 transition-colors duration-300 leading-tight">
                                     {{ $article['title'] }}
                                 </a>
 
                                 {{-- Deskripsi --}}
                                 <p
-                                    class="text-sm md:text-base text-gray-200 line-clamp-2 md:line-clamp-3 max-w-xl leading-relaxed">
+                                    class="lg:text-base md:text-sm text-xs text-gray-200 line-clamp-2 md:line-clamp-3 max-w-xl leading-relaxed">
                                     {{ Str::limit(strip_tags($article['body']), 120) }}
                                 </p>
                             </div>

@@ -156,7 +156,7 @@
     <header class="fixed top-0 w-full z-50"> @include('components.navbar')
     </header>
 
-    <main class="flex-grow pt-16 lg:pt-20 lg:mt-12 animate-page">
+    <main class="flex-grow pt-24 lg:pt-20 lg:mt-12 animate-page">
         @yield('content')
     </main>
     <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
@@ -224,6 +224,7 @@
                 initCarousels();
             }
         });
+
     </script>
     @livewireScripts
 </body>

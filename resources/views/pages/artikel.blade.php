@@ -9,7 +9,7 @@
         <x-artikel.carousel />
 
         <div class="box -mt-8">
-            <div class="w-full p-4 sm:p-8">
+            <div class="w-full sm:p-8">
                 <div class="flex items-center justify-between mb-6">
                     <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
                         Artikel Terbaru
@@ -22,7 +22,7 @@
                             <li class="py-4 first:pt-0 last:pb-0">
                                 <div class="flex items-center space-x-4">
                                     <div class="flex-shrink-0">
-                                        <img class="w-12 h-12 rounded-xl object-cover shadow-sm" src="{{ $item['cover'] }}"
+                                        <img class="lg:w-12 lg:h-12 w-16 h-16 rounded-xl object-cover shadow-sm" src="{{ $item['cover'] }}"
                                             alt="{{ $item['title'] }}">
                                     </div>
 
@@ -33,19 +33,24 @@
                                         </p>
 
                                         <a href="{{ route('artikel.read', $item['slug']) }}"
-                                            class="block text-lg font-bold text-gray-800 dark:text-white hover:text-blue-600 transition-colors duration-200 leading-tight"
+                                            class="block lg:text-md text-base font-bold text-gray-800 dark:text-white hover:text-blue-600 transition-colors duration-200 leading-tight"
                                             wire:navigate>
                                             {{ $item['title'] }}
                                         </a>
 
-                                        <div class="flex items-center gap-4 mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        <div
+                                            class="mt-1 flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-4 text-[9px] lg:text-xs text-gray-500 dark:text-gray-400">
+
                                             <span class="flex items-center gap-1">
                                                 <i class="ri-calendar-line"></i>
                                                 {{ Carbon\Carbon::parse($item['created_at'])->translatedFormat('d F Y') }}
                                             </span>
+
                                             <span class="flex items-center gap-1">
-                                                <i class="ri-user-line"></i> {{ $item['author'] }}
+                                                <i class="ri-user-line"></i>
+                                                {{ $item['author'] }}
                                             </span>
+
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +64,22 @@
         </div>
     </main>
 
-    <section class="container mx-auto w-full px-6 md:px-0 my-2">
+    <section class="container mx-auto w-full px-6 md:px-0 my-2"  id="artikel">
         <livewire:pages.artikel />
     </section>
 @endsection
+@push('scripts')
+    <script>
+        document.addEventListener('livewire:navigated', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            requestAnimationFrame(() => {
+                if (params.get('scroll') === 'artikel') {
+                    document.getElementById('artikel')?.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+@endpush

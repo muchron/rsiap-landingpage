@@ -34,76 +34,94 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left pt-2">
                         <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Layanan Kehamilan Modern</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pemantauan janin berkala dengan teknologi USG terbaru untuk memastikan tumbuh kembang optimal.</p>
-        </div>
-    </div>
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Layanan Kehamilan Modern</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pemantauan janin
+                                    berkala dengan teknologi USG terbaru untuk memastikan tumbuh kembang optimal.</p>
+                            </div>
+                        </div>
 
-    <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Nilai-Nilai Islami</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pelayanan medis yang mengedepankan etika islami, memberikan ketenangan batin bagi keluarga.</p>
-        </div>
-    </div>
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Nilai-Nilai Islami</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pelayanan medis yang
+                                    mengedepankan etika islami, memberikan ketenangan batin bagi keluarga.</p>
+                            </div>
+                        </div>
 
-    <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Kesehatan Anak Terpadu</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Screening stunting, imunisasi lengkap, dan konsultasi tumbuh kembang anak secara komprehensif.</p>
-        </div>
-    </div>
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Kesehatan Anak Terpadu</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Screening stunting,
+                                    imunisasi lengkap, dan konsultasi tumbuh kembang anak secara komprehensif.</p>
+                            </div>
+                        </div>
 
-    <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-pink-500 flex items-center justify-center shadow-lg shadow-pink-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Sentuhan Kekeluargaan</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pendekatan pelayanan yang hangat dan bersahabat, membuat Anda merasa nyaman layaknya di rumah.</p>
-        </div>
-    </div>
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-pink-500 flex items-center justify-center shadow-lg shadow-pink-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Sentuhan Kekeluargaan</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Pendekatan pelayanan
+                                    yang hangat dan bersahabat, membuat Anda merasa nyaman layaknya di rumah.</p>
+                            </div>
+                        </div>
 
-    <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Sehat Bersama Kami</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Komitmen kami adalah memberikan hasil diagnosa yang tepat dan tindakan medis yang cepat.</p>
-        </div>
-    </div>
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Sehat Bersama Kami</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Komitmen kami adalah
+                                    memberikan hasil diagnosa yang tepat dan tindakan medis yang cepat.</p>
+                            </div>
+                        </div>
 
-    <div class="flex gap-4 items-start group">
-        <div class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-200 dark:shadow-none transition-transform group-hover:rotate-12">
-            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <div>
-            <h4 class="font-bold text-gray-800 dark:text-white text-sm">Bahagia Melayani</h4>
-            <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Menghadirkan senyum dan kebahagiaan melalui pelayanan yang tulus dan penuh empati.</p>
-        </div>
-    </div>
+                        <div class="flex gap-4 items-start group">
+                            <div
+                                class="mt-1 shrink-0 w-6 h-6 rounded-xl bg-amber-500 flex items-center justify-center shadow-lg shadow-amber-200 dark:shadow-none transition-transform group-hover:rotate-12">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white text-sm">Bahagia Melayani</h4>
+                                <p class="text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed">Menghadirkan senyum
+                                    dan kebahagiaan melalui pelayanan yang tulus dan penuh empati.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -287,19 +305,21 @@
     <section class="py-12 bg-white dark:bg-gray-800">
 
         <div class="max-w-7xl mx-auto px-4">
-<div class="text-center mb-16">
-    <h2 class="flex flex-col mb-4 tracking-tight">
-        <span class="font-corinthia text-blue-700 dark:text-blue-400 leading-none -mb-2 md:-mb-4" style="font-size: clamp(2.5rem, 8vw, 4rem);">
-            Profesional & Kompeten
-        </span>
-        <span class="text-3xl md:text-5xl font-black text-blue-800 dark:text-white uppercase tracking-tighter">
-            Mengenal Dokter Kami
-        </span>
-    </h2>
-    <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto uppercase text-[10px] font-bold tracking-[0.3em]">
-        Dedikasi Penuh Untuk Kesehatan Ibu & Buah Hati
-    </p>
-</div>
+            <div class="text-center mb-16">
+                <h2 class="flex flex-col mb-4 tracking-tight">
+                    <span class="font-corinthia text-blue-700 dark:text-blue-400 leading-none -mb-2 md:-mb-4"
+                        style="font-size: clamp(2.5rem, 8vw, 4rem);">
+                        Profesional & Kompeten
+                    </span>
+                    <span class="text-3xl md:text-5xl font-black text-blue-800 dark:text-white uppercase tracking-tighter">
+                        Mengenal Dokter Kami
+                    </span>
+                </h2>
+                <p
+                    class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto uppercase text-[10px] font-bold tracking-[0.3em]">
+                    Dedikasi Penuh Untuk Kesehatan Ibu & Buah Hati
+                </p>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
                 @foreach($dokter as $specialty)
                     @php
@@ -314,7 +334,8 @@
                     @endphp
 
                     @foreach($specialty['doctors'] as $doctor)
-                        <div class="group relative aspect-[3/4] rounded-4xl overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-lg transition-all duration-500 hover:-translate-y-2 ">
+                        <div
+                            class="group relative aspect-[3/4] rounded-4xl overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-lg transition-all duration-500 hover:-translate-y-2 ">
 
                             @if(!empty($doctor['photo']))
                                 <img src="{{ asset($doctor['photo']) }}" alt="{{ $doctor['name'] }}"
@@ -462,4 +483,20 @@
         }
     </style>
 
+@endpush
+
+@push('scripts')
+    <script>
+        document.addEventListener('livewire:navigated', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            requestAnimationFrame(() => {
+                if (params.get('scroll') === 'poliklinik') {
+                    document.getElementById('poliklinik')?.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 @endpush

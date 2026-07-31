@@ -28,51 +28,45 @@
     </style>
 @endpush
 <div class="relative">
-
-    {{-- ============================= --}}
-    {{-- CATEGORY FILTER --}}
-    {{-- ============================= --}}
     <div class="flex items-center gap-3 mb-6 flex-wrap">
 
         <span class="font-semibold text-gray-800 dark:text-gray-200 text-sm">
             Kategori Artikel :
         </span>
 
-        <button
-            wire:click="filterCategory(null)"
+        <button wire:click="filterCategory(null)"
             class="px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300
             {{ $category === null ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300 hover:scale-105' }}">
             Semua
         </button>
         @foreach ($categories as $item)
-            <button
-                wire:click="filterCategory('{{ $item['slug'] }}')"
+            <button wire:click="filterCategory('{{ $item['slug'] }}')"
                 class="px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300
-                {{ $category === $item['slug'] ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300 hover:scale-105' }}">
+                                                                                                    {{ $category === $item['slug'] ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300 hover:scale-105' }}">
                 {{ $item['name'] }}
             </button>
         @endforeach
 
     </div>
-    <div wire:loading.delay
-        wire:target="filterCategory"
+    <div wire:loading.delay wire:target="filterCategory"
         class="absolute inset-0 flex items-center justify-center bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm z-20 transition-opacity duration-300 rounded-xl">
 
         <div class="text-center">
-            <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <div class="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto">
+            </div>
             <p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
                 Memuat artikel...
             </p>
         </div>
 
     </div>
-    <div wire:loading.class="opacity-40"
-        wire:target="filterCategory"
+    <div wire:loading.class="opacity-40" wire:target="filterCategory"
         class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 py-6 transition-all duration-500">
 
         @forelse ($artikels as $artikel)
-            <div class="shadow-md rounded-xl border border-gray-300 dark:border-gray-600
-                        transition-all duration-500 hover:scale-105 hover:shadow-xl bg-white dark:bg-gray-800">
+            <div
+                class="shadow-md rounded-xl border border-gray-300 dark:border-gray-600
+                                                                                                            transition-all duration-500 hover:scale-105 hover:shadow-xl bg-white dark:bg-gray-800">
 
                 <div>
                     <a href="{{ route('artikel.read', $artikel['slug']) }}">
@@ -83,7 +77,8 @@
 
                 <div class="p-6">
 
-                    <p class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2 hover:text-blue-900 leading-tight transition-colors duration-300">
+                    <p
+                        class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2 hover:text-blue-900 leading-tight transition-colors duration-300">
                         <a href="{{ route('artikel.read', $artikel['slug']) }}" wire:navigate>
                             {{ $artikel['title'] }}
                         </a>
@@ -105,7 +100,8 @@
                     </p>
 
                     <a href="{{ route('artikel.read', $artikel['slug']) }}"
-                        class="inline-block mt-4 text-sm font-medium text-white px-3 py-2 bg-blue-700 hover:bg-blue-900 rounded-lg transition-all duration-300 hover:scale-105" wire:navigate>
+                        class="inline-block mt-4 text-sm font-medium text-white px-3 py-2 bg-blue-700 hover:bg-blue-900 rounded-lg transition-all duration-300 hover:scale-105"
+                        wire:navigate>
                         Lanjutkan Membaca
                     </a>
 
@@ -114,23 +110,20 @@
             </div>
         @empty
             <div class="col-span-full flex justify-center">
-                <div class="flex flex-col items-center text-center
-                    bg-blue-50 dark:bg-gray-800
-                    border border-blue-400 dark:border-blue-600 
-                    rounded-xl px-8 py-10 shadow-md
-                    w-2xl w-full animate-fadeIn">
+                <div
+                    class="flex flex-col items-center text-center
+                                                                                                        bg-blue-50 dark:bg-gray-800
+                                                                                                        border border-blue-400 dark:border-blue-600
+                                                                                                        rounded-xl px-8 py-10 shadow-md
+                                                                                                        w-2xl w-full animate-fadeIn">
 
                     {{-- Icon Warning --}}
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-16 h-16 text-blue-500 dark:text-blue-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-500 dark:text-blue-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 9v4m0 4h.01M4.93 19h14.14c1.54 0 2.5-1.67
-                         1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46
-                         0L3.2 16c-.77 1.33.19 3 1.73 3z" />
+                                                                                                             1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46
+                                                                                                             0L3.2 16c-.77 1.33.19 3 1.73 3z" />
                     </svg>
 
                     <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-400">
@@ -142,12 +135,11 @@
                         Silakan pilih kategori lain atau kembali lagi nanti.
                     </p>
 
-                    <button
-                        wire:click="filterCategory(null)"
+                    <button wire:click="filterCategory(null)"
                         class="mt-5 px-4 py-2 text-sm font-medium
-                       bg-blue-500 hover:bg-blue-600
-                       text-white rounded-lg transition-all duration-300
-                       hover:scale-105 shadow">
+                                                                                                           bg-blue-500 hover:bg-blue-600
+                                                                                                           text-white rounded-lg transition-all duration-300
+                                                                                                           hover:scale-105 shadow">
                         Lihat Semua Artikel
                     </button>
 
@@ -180,3 +172,8 @@
     </div>
 
 </div>
+@push('scripts')
+
+
+
+@endpush
