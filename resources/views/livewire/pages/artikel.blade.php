@@ -171,6 +171,16 @@
 
     </div>
 
+    <iframe
+    class="w-full aspect-video rounded-2xl shadow-lg"
+    src="https://www.youtube.com/embed/i3U-S6aPPVE"
+    title="i3U-S6aPPVE"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+</iframe>
+
 </div>
 @push('scripts')
 

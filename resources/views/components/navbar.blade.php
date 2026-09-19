@@ -93,6 +93,9 @@
                             <x-navbar.dropdown-link :href="route('profile.akreditasi')">
                                 Akreditasi
                             </x-navbar.dropdown-link>
+                            <x-navbar.dropdown-link :href="route('profile.indikator-mutu-nasional')">
+                                Indikator Mutu Nasional
+                            </x-navbar.dropdown-link>
                         </x-navbar.dropdown>
                     </li>
                     <li>

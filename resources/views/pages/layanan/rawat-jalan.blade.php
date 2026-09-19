@@ -128,7 +128,7 @@
                 <div class="relative hidden lg:block">
                     <div
                         class="relative z-10 rounded-4xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700 border-8 border-white dark:border-gray-800">
-                        <img src="{{ asset('images/rawat-jalan.JPG') }}" alt="Medical Care"
+                        <img src="{{ asset('images/rawat-jalan.webp') }}" alt="Medical Care"
                             class="w-full h-[550px] object-cover">
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                     class="md:col-span-6 md:row-span-2 col-span-2 group relative overflow-hidden rounded-4xl bg-pink-500 p-10 flex flex-col justify-end transition-all hover:scale-[1.01] shadow-2xl shadow-blue-100/50 dark:shadow-none min-h-[300px] duration-700">
 
                     <div class="absolute inset-0 z-0">
-                        <img src="{{ asset('images/farmasi.JPG') }}" alt="Layanan Farmasi"
+                        <img src="{{ asset('images/farmasi.webp') }}" alt="Layanan Farmasi"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 dark:opacity-40">
 
                         <div class="absolute inset-0 bg-gradient-to-t from-pink-800 via-pink-900/20 to-transparent">
@@ -237,7 +237,7 @@
                     class="md:col-span-6 md:row-span-2 group relative overflow-hidden rounded-4xl bg-blue-700 text-white p-12 flex flex-col justify-end shadow-2xl shadow-blue-200 dark:shadow-none transition-all hover:scale-[1.01] duration-700">
 
                     <div class="absolute inset-0 z-0">
-                        <img src="{{ asset('images/laboratorium.jpg') }}" alt="Fasilitas Diagnostik"
+                        <img src="{{ asset('images/laboratorium.webp') }}" alt="Fasilitas Diagnostik"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30 dark:opacity-20">
 
                         <div class="absolute inset-0 bg-gradient-to-t from-blue-700 via-blue-700/80 to-blue-700/50"></div>
@@ -267,7 +267,7 @@
                     class="md:col-span-6 md:row-span-2 group rounded-4xl bg-orange-400 p-10 flex flex-col justify-end gap-6 relative overflow-hidden transition-all hover:scale-[1.01] shadow-2xl shadow-orange-200 dark:shadow-none min-h-[250px]">
 
                     <div class="absolute inset-0 z-0">
-                        <img src="{{ asset('images/kasir-keuangan.JPG') }}" alt="Digital Payment System"
+                        <img src="{{ asset('images/kasir-keuangan.webp') }}" alt="Digital Payment System"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30 dark:opacity-20">
 
                         <div class="absolute inset-0 bg-gradient-to-t from-orange-700 via-orange-600/10 to-transparent">

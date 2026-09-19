@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndikatorMutuController;
 use App\Http\Controllers\Layanan\RawatInap;
 use App\Http\Controllers\Layanan\RawatJalan;
 use App\Services\ApiService;
@@ -39,6 +40,7 @@ Route::prefix('profile')->group(function () {
             ['title' => ucfirst(request()->segment(1)) . ' - ' . 'Akreditasi']
         );
     })->name('profile.akreditasi');
+    Route::get('/indikator-mutu-nasional', [IndikatorMutuController::class, 'index'])->name('profile.indikator-mutu-nasional');
 });
 
 Route::prefix('layanan')->group(function () {
@@ -53,7 +55,7 @@ Route::prefix('layanan')->group(function () {
 
 
     Route::get('/ugd', function () {
-return view('errors.404');
+        return view('errors.404');
     })->name('layanan.ugd');
     Route::get('/poliklinik', function () {
         return view('errors.404');

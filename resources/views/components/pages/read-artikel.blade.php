@@ -76,11 +76,19 @@
             font-weight: 600 !important;
             text-transform: uppercase !important;
         }
+
+        figcaption {
+            font-size: 0.875rem !important;
+            line-height: 1.25rem !important;
+            color: #6b7280 !important;
+            text-align: center !important;
+            margin-top: 0.5rem !important;
+        }
     </style>
 @endpush
 
-@section('meta_desc', Carbon\Carbon::parse($artikel['created_at'])->translatedFormat('d F Y') . " | " . Str::limit(strip_tags($artikel['body']), 200))
-@section('meta_title', "Artikel & Berita RSIA Aisyiyah Pekajangan | " . $artikel['title'])
+@section('meta_desc', Carbon\Carbon::parse($artikel['created_at'])->translatedFormat('d F Y') . ' | ' . Str::limit(strip_tags($artikel['body']), 200))
+@section('meta_title', 'Artikel & Berita RSIA Aisyiyah Pekajangan | ' . $artikel['title'])
 @section('meta_image', $artikel['cover'])
 
 @section('content')
@@ -147,7 +155,8 @@
                             <div class="flex flex-wrap gap-3 mb-4">
 
                                 {{-- Copy Link --}}
-                                <button x-data @click="
+                                <button x-data
+                                    @click="
                                                                                                                             navigator.clipboard.writeText('{{ $url }}');
                                                                                                                             $el.innerText='Tersalin!';
                                                                                                                             setTimeout(()=>$el.innerText='Salin Link',1500)
@@ -209,7 +218,8 @@
 
 
                         {{-- Isi Artikel --}}
-                        <div class="article-content mt-8
+                        <div
+                            class="article-content mt-8
                                                                                             text-[15px] leading-8
                                                                                             lg:text-[17px]
                                                                                             text-gray-700 dark:text-gray-300
@@ -245,17 +255,15 @@
                         </div>
 
                         {{-- Label --}}
-                        @if(count($artikel['labels']))
+                        @if (count($artikel['labels']))
                             <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
 
                                 <x-badge>
 
-                                    @foreach($artikel['labels'] as $value)
-
+                                    @foreach ($artikel['labels'] as $value)
                                         <x-badge-link size="small">
                                             #{{ $value['name'] }}
                                         </x-badge-link>
-
                                     @endforeach
 
                                 </x-badge>
